@@ -2,19 +2,188 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>InOut - Developer Website</title>
+    <title>musamecit — Mobile Apps by Musa Erdem Mecit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Developer website for mobile apps by Musa Erdem Mecit: MenuBank and InOut — Payment Tracker. App ads, support, privacy policies and terms of service."
+    />
+    <meta name="author" content="Musa Erdem Mecit" />
+    <meta name="theme-color" content="#020617" />
+    <style>
+      :root {
+        --bg: #020617;
+        --surface: #0b1222;
+        --border: #1e293b;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #22c55e;
+        --link: #60a5fa;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+      }
+      header {
+        margin-bottom: 40px;
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 800;
+        margin: 0 0 6px;
+        letter-spacing: -0.3px;
+      }
+      .tagline {
+        color: var(--muted);
+        margin: 0;
+        font-size: 15px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 18px;
+      }
+      p { margin: 0 0 12px; }
+      section.app-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 22px 22px 18px;
+        margin-bottom: 20px;
+      }
+      .app-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .app-name {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0;
+      }
+      .pill {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        background: rgba(34, 197, 94, 0.15);
+        color: var(--accent);
+        border: 1px solid rgba(34, 197, 94, 0.3);
+      }
+      .app-desc {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 6px 0 14px;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .links a {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .links a:hover {
+        background: rgba(96, 165, 250, 0.08);
+        border-color: var(--link);
+      }
+      .links a.primary {
+        background: var(--accent);
+        color: #042f17;
+        border-color: var(--accent);
+        font-weight: 700;
+      }
+      .links a.primary:hover {
+        background: #16a34a;
+        border-color: #16a34a;
+      }
+      footer {
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 12px;
+      }
+      footer a { color: var(--link); text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+      code {
+        background: rgba(148, 163, 184, 0.12);
+        padding: 1px 6px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+    </style>
   </head>
   <body>
     <main>
-      <h1>InOut - Payment Tracker</h1>
-      <p>This is the developer website for the InOut - Payment Tracker iOS and Android application.</p>
-      <p>
-        For the privacy policy, please visit
-        <a href="https://musamecit.github.io/InOut-Payment-Tracker/" target="_blank" rel="noopener">
-          InOut Privacy Policy
-        </a>.
-      </p>
+      <header>
+        <h1>Musa Erdem Mecit</h1>
+        <p class="tagline">Developer website for iOS and Android applications.</p>
+      </header>
+
+      <section class="app-card">
+        <div class="app-head">
+          <h2 class="app-name">MenuBank</h2>
+          <span class="pill">iOS &middot; Android</span>
+        </div>
+        <p class="app-desc">
+          Discover restaurants, browse up-to-date menus, save favorites and share personal lists.
+        </p>
+        <div class="links">
+          <a class="primary" href="https://apps.apple.com/app/id6759203176" target="_blank" rel="noopener">App Store</a>
+          <a href="https://musamecit.github.io/musamecit.menubank.io/support.html" target="_blank" rel="noopener">Support</a>
+          <a href="https://musamecit.github.io/musamecit.menubank.io/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://musamecit.github.io/musamecit.menubank.io/terms.html" target="_blank" rel="noopener">Terms of Service</a>
+        </div>
+      </section>
+
+      <section class="app-card">
+        <div class="app-head">
+          <h2 class="app-name">InOut &mdash; Payment Tracker</h2>
+          <span class="pill">iOS &middot; Android</span>
+        </div>
+        <p class="app-desc">
+          Track your incoming and outgoing payments, stay on top of monthly cash flow.
+        </p>
+        <div class="links">
+          <a href="https://musamecit.github.io/InOut-Payment-Tracker/" target="_blank" rel="noopener">Privacy Policy</a>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          Ad verification file:
+          <a href="/app-ads.txt">app-ads.txt</a> &middot;
+          Contact: <a href="mailto:musamecit@gmail.com">musamecit@gmail.com</a>
+        </p>
+        <p>&copy; 2026 Musa Erdem Mecit. All rights reserved.</p>
+      </footer>
     </main>
   </body>
 </html>
