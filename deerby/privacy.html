@@ -8,22 +8,27 @@
 :root { --ink:#2C1810; --primary:#B8754A; --muted:#7A6657; --cream:#FDF6EC; --divider:#EADBC2; }
 * { box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-       max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; color: var(--ink); background: var(--cream);
+       max-width: 800px; margin: 0 auto; padding: 32px 20px 80px; color: var(--ink); background: var(--cream);
        line-height: 1.6; }
-h1 { font-size: 32px; margin: 0 0 4px; }
-h2 { font-size: 22px; margin-top: 36px; color: var(--primary); }
+h1 { font-size: 30px; margin: 0 0 4px; }
+h2 { font-size: 22px; margin-top: 36px; color: var(--primary); border-top: 1px solid var(--divider); padding-top: 16px; }
 h3 { font-size: 17px; margin-top: 22px; }
-p, li { font-size: 16px; }
+p, li { font-size: 15px; }
 a { color: var(--primary); }
 .muted { color: var(--muted); font-size: 14px; }
 hr { border: 0; border-top: 1px solid var(--divider); margin: 32px 0; }
 .toc { background: #fff; border: 1px solid var(--divider); padding: 16px 20px; border-radius: 12px; }
 .toc ol { margin: 8px 0 0 18px; padding: 0; }
-code { background: #fff; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--divider); font-size: 14px; }
+table { border-collapse: collapse; width: 100%; margin-top: 12px; font-size: 14px; }
+th, td { border: 1px solid var(--divider); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #fff; }
+.callout { background: #FFF3CC; border-left: 4px solid #E0A82E; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+.legal { background: #fff; border: 1px solid var(--divider); padding: 12px 16px; border-radius: 6px; margin: 16px 0; font-size: 14px; }
 nav.lang { display: flex; gap: 12px; flex-wrap: wrap; padding: 8px 0 16px; font-size: 14px; }
 header { display: flex; align-items: center; gap: 14px; }
 header .logo { width: 56px; height: 56px; background: var(--primary); color: #fff; border-radius: 14px;
                display: grid; place-items: center; font-weight: 800; font-size: 22px; }
+code { background: #fff; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--divider); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -32,268 +37,384 @@ header .logo { width: 56px; height: 56px; background: var(--primary); color: #ff
   <div class="logo">D</div>
   <div>
     <h1>Deerby — Privacy Policy</h1>
-    <div class="muted">Effective date: 2 May 2026 · Version 1.0</div>
+    <div class="muted">Effective date: 2 May 2026 · Version 1.4 · Last updated: 2 May 2026</div>
   </div>
 </header>
 
 <nav class="lang">
-  <a href="#en">English</a> · <a href="#tr">Türkçe</a> ·
+  <a href="#en">English</a> · <a href="#tr">Türkçe (KVKK Aydınlatma Metni)</a> · <a href="#california">California (CCPA / CPRA)</a> · <a href="#eea">EEA / UK (GDPR)</a> ·
   <a href="terms.html">Terms of Service</a>
 </nav>
+
+<div class="callout">
+<strong>Plain-language summary.</strong> Deerby only works because we know roughly where you are. We use your precise GPS while the app is open to figure out who is within 105 metres of you, and we let those people see you back. We never sell your data, never share it with ad networks, and you can delete everything from <em>Settings → Delete account</em> at any time.
+</div>
 
 <hr/>
 
 <section id="en">
 
-<p><strong>Deerby</strong> ("we", "us", "our") is a location-based social application
-operated by Mustafa Mecit ("the Operator"). This Privacy Policy explains what personal
-data we collect when you use Deerby on iOS or Android, why we collect it, how we use and
-share it, how long we keep it, and the rights you have under applicable laws including
-the EU General Data Protection Regulation (GDPR), the UK GDPR, the California Consumer
-Privacy Act (CCPA/CPRA), Türkiye's KVKK, and Apple/Google platform requirements.</p>
+<p>This Privacy Policy ("Policy") describes how <strong>Deerby</strong> (the "Service"), operated by <strong>Mustafa Mecit</strong> as sole proprietor ("we", "us", "our", "Operator"), collects, uses, discloses and protects information about you ("you", "User") in connection with your access to and use of the Deerby mobile application on iOS and Android. This Policy is part of, and incorporated by reference into, our <a href="terms.html">Terms of Service</a>.</p>
 
 <div class="toc">
   <strong>Table of contents</strong>
   <ol>
-    <li><a href="#scope">Scope &amp; controller</a></li>
-    <li><a href="#age">Age requirement (18+)</a></li>
-    <li><a href="#data">Data we collect</a></li>
-    <li><a href="#purposes">How we use your data &amp; lawful bases</a></li>
-    <li><a href="#location">Precise location and the 105 m radius</a></li>
-    <li><a href="#ghost">Ghost mode</a></li>
-    <li><a href="#chats">Messages, mutual rule, 24-hour auto-delete</a></li>
-    <li><a href="#share">Who we share data with</a></li>
-    <li><a href="#transfer">International data transfers</a></li>
-    <li><a href="#security">Security</a></li>
-    <li><a href="#retention">Retention</a></li>
-    <li><a href="#rights">Your rights</a></li>
+    <li><a href="#scope">Scope, controller, contact</a></li>
+    <li><a href="#age">Age (18+ only)</a></li>
+    <li><a href="#data-categories">Categories of personal data we collect</a></li>
+    <li><a href="#sources">Sources of personal data</a></li>
+    <li><a href="#purposes">Purposes &amp; lawful bases for processing</a></li>
+    <li><a href="#location">Precise location, the 105 m rule, and ±30 m fuzz</a></li>
+    <li><a href="#ghost">Ghost mode &amp; safe zones</a></li>
+    <li><a href="#chats">Messages, the 24-hour rule &amp; encryption in transit</a></li>
+    <li><a href="#sharing">With whom we share data (subprocessors &amp; partners)</a></li>
+    <li><a href="#sell">"Selling" / "sharing" of personal information — we don't</a></li>
+    <li><a href="#transfers">International data transfers</a></li>
+    <li><a href="#retention">How long we keep what (retention table)</a></li>
+    <li><a href="#security">Security measures</a></li>
+    <li><a href="#rights">Your rights (in‑app + how to exercise them)</a></li>
     <li><a href="#children">Children</a></li>
-    <li><a href="#cookies">Cookies and analytics</a></li>
-    <li><a href="#payments">Premium &amp; in-app purchases</a></li>
-    <li><a href="#changes">Changes to this policy</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#dnt">Cookies, analytics, "Do Not Track"</a></li>
+    <li><a href="#payments">Premium &amp; in‑app purchases</a></li>
+    <li><a href="#deceased">Deceased users</a></li>
+    <li><a href="#breach">Data breach response</a></li>
+    <li><a href="#changes">Changes to this Policy</a></li>
+    <li><a href="#contact">Contact &amp; complaints</a></li>
+    <li><a href="#tr">KVKK Aydınlatma Metni (Türkiye)</a></li>
+    <li><a href="#california">California Privacy Notice (CCPA / CPRA)</a></li>
+    <li><a href="#eea">EEA / UK GDPR-specific addendum</a></li>
   </ol>
 </div>
 
-<h2 id="scope">1. Scope &amp; controller</h2>
-<p>This policy covers the Deerby mobile app and any associated services (collectively, the
-"Service"). The data controller for personal data processed through the Service is
-<strong>Mustafa Mecit</strong>, reachable at
-<a href="mailto:support@musamecit.com">support@musamecit.com</a>. If you are in the EEA or
-the UK, you can contact us about any data-protection question at the same address.</p>
+<h2 id="scope">1. Scope, controller, contact</h2>
+<p>This Policy applies to information processed in connection with the Deerby mobile application and any related services (collectively, the "Service"). The data <strong>controller</strong> for personal data processed in connection with the Service is:</p>
+<div class="legal">
+<strong>Mustafa Mecit</strong>, sole proprietor.<br/>
+Postal address: provided on lawful request.<br/>
+Email: <a href="mailto:support@musamecit.com">support@musamecit.com</a><br/>
+Data protection requests: <a href="mailto:privacy@musamecit.com">privacy@musamecit.com</a> (or the support email above).
+</div>
+<p>The Operator does not currently have a <em>statutory</em> obligation to appoint an EU representative or DPO under GDPR Articles 27 / 37 because of size and risk profile, but the Operator voluntarily honours all data subject rights below.</p>
 
-<h2 id="age">2. Age requirement</h2>
-<p>Deerby is for users <strong>18 years or older</strong>. By creating an account, you confirm
-that you are at least 18. We will permanently delete any account we discover to belong to
-a minor.</p>
+<h2 id="age">2. Age</h2>
+<p>Deerby is for users aged <strong>18 or older</strong>. We do not knowingly collect data from anyone under 18, and we do not allow accounts that we identify as belonging to a minor. The Service collects an explicit <em>"I confirm I am at least 18"</em> attestation at sign-up, in addition to a date-of-birth field that is checked against an 18-year minimum. We reserve the right to suspend or delete any account where we have a reasonable belief that the user is under 18, and to cooperate with parents/guardians and law enforcement to protect minors.</p>
 
-<h2 id="data">3. Data we collect</h2>
+<h2 id="data-categories">3. Categories of personal data we collect</h2>
 
-<h3>3.1 Account data (provided by you or your sign-in provider)</h3>
+<h3>3.1 Identity &amp; account data</h3>
 <ul>
-  <li>Authentication identifier from Apple Sign-In or Google (a stable user ID, plus the email address you choose to share).</li>
-  <li>Display name, date of birth, gender, who you're "looking for", optional bio, optional height, optional relationship status.</li>
-  <li>3 to 6 profile photos (uploaded by you).</li>
-  <li>Filter preferences (which genders, ages, and "looking for" categories you want to see and to receive messages from).</li>
-  <li>Language preference.</li>
+  <li><strong>Authentication identifier</strong> from Apple Sign-In and/or Google Sign-In (a stable user ID, plus the email address you choose to share with us).</li>
+  <li><strong>Display name</strong> you choose.</li>
+  <li><strong>Date of birth</strong>, used to calculate your age and to enforce the 18+ requirement; only the year/month/day is stored.</li>
+  <li>Apple's <em>real-user-status</em> hint, if available (a coarse indicator from Apple of whether your sign-in looks like a real person — three values: unknown, likelyReal, likelyFake).</li>
 </ul>
 
-<h3>3.2 Location data</h3>
+<h3>3.2 Profile data</h3>
 <ul>
-  <li>Your <strong>precise GPS coordinates</strong> while you use the app, with foreground access only.</li>
-  <li>The timestamp of your most recent location update.</li>
-  <li>We do <em>not</em> track your location in the background or build a movement history beyond your most recent point.</li>
+  <li>Gender (one of: male / female / non-binary / other).</li>
+  <li>"Looking for" preference (friendship, dating, relationship, networking, open).</li>
+  <li>Optional: relationship status, height, bio (max 500 characters).</li>
+  <li>3 to 6 profile photos that you upload (you may delete or replace them at any time).</li>
+  <li>Up to 3 icebreaker prompts (a prompt key + a short answer of yours).</li>
+  <li>Vibe / status emoji and an optional 4-hour expiry.</li>
+  <li>App language preference.</li>
 </ul>
 
-<h3>3.3 Communication data</h3>
+<h3>3.3 Location data</h3>
 <ul>
-  <li>Messages you send and receive, plus metadata (sender, conversation, timestamps, read receipts).</li>
-  <li>A flag indicating whether a message used a Premium "long-range" slot (sent outside the 105 m radius).</li>
+  <li><strong>Precise GPS coordinates</strong> while you have the app open (foreground only). We never request <em>"Always Allow"</em> background location.</li>
+  <li>The timestamp of your most recent location update (<code>location_updated_at</code>).</li>
+  <li>If you enable <strong>Approximate location</strong>, we apply a deterministic ±30 m offset to the coordinates we expose to other users — your stored point is fuzzed before any discovery query reads it. Your raw point is still stored on our servers; the fuzz is applied for visibility, not in‑memory before write.</li>
+  <li>When you create a Safe Zone, we store the centre (latitude, longitude) and radius (25–500 m).</li>
+  <li>When you buy a Boost, we store the centre point of where the boost was purchased.</li>
 </ul>
 
-<h3>3.4 Safety &amp; moderation data</h3>
+<h3>3.4 Communications &amp; engagement</h3>
 <ul>
-  <li>Blocks you create, reports you submit, and reports submitted about you.</li>
+  <li>Messages you send and receive, including timestamps, read receipts (<code>read_at</code>) and a flag for <em>long-range</em> (Premium‑gated) messages.</li>
+  <li>Encounters log: an anonymised pair record (you, another user, ~250 m grid cell, time) used to detect "familiar face" alerts. The pair is canonicalised (smaller user-ID first) so we don't know who saw whom first.</li>
+  <li>Profile visits (when you open someone's profile we record a row; both sides must have <em>"show me as a visitor"</em> on for either side to ever see the row).</li>
+  <li>Blocks, mutes, reports you create or receive.</li>
+  <li>Gifts you send/receive (gift type, conversation, timestamps; <em>no</em> message content).</li>
 </ul>
 
-<h3>3.5 Technical &amp; device data</h3>
+<h3>3.5 Verification &amp; safety</h3>
 <ul>
-  <li>Device platform (iOS / Android), app version, OS version, locale, time zone.</li>
-  <li>Push notification tokens (when you opt in).</li>
-  <li>Crash and error logs, with stack traces and non-identifying device attributes.</li>
+  <li>Verification selfies you submit (stored in a <strong>private</strong> storage bucket; never shown to other users; deleted when verification is approved or rejected, and within 30 days otherwise).</li>
+  <li>If you opt in to optional ID verification (V1.4+ feature), the document data is processed by our verification provider (Stripe Identity); we receive only the result and a session reference.</li>
+  <li>Photo content moderation labels returned by AWS Rekognition (e.g., "Suggestive", "Violence"); these labels stay on the photo row even after the photo is deleted, for fraud-detection trail.</li>
 </ul>
 
-<h3>3.6 Purchase data</h3>
+<h3>3.6 Device, technical &amp; diagnostic data</h3>
 <ul>
-  <li>Apple StoreKit and Google Play Billing receipts and transaction identifiers (we do <strong>not</strong> see your card details — payment is handled by Apple or Google).</li>
-  <li>Subscription status and expiry date.</li>
+  <li>Device platform (iOS or Android), OS version, app version, locale, time zone.</li>
+  <li>Push-notification token (Apple APNs / Google FCM), only when you grant push permission.</li>
+  <li>Crash logs (anonymised stack traces, no message bodies, no email).</li>
+  <li>Coarse usage events for app stability (e.g., feature timings) — never linked to ad networks.</li>
 </ul>
 
-<h2 id="purposes">4. How we use your data &amp; lawful bases (GDPR / UK GDPR)</h2>
+<h3>3.7 Purchase data</h3>
+<ul>
+  <li>Apple StoreKit and Google Play Billing receipts, transaction identifiers, the product purchased, expiry dates and subscription status. <strong>We never see your card or bank details</strong> — payment is fully handled by Apple or Google.</li>
+</ul>
+
+<h3>3.8 Consent log</h3>
+<ul>
+  <li>Every time you accept the Terms, the Privacy Policy or the 18+ attestation, we write a row to <code>consent_log</code> with: your user ID, what you accepted, the document version, your platform/OS string, and the timestamp. This is required to defend against fraudulent disputes and to comply with regulator audits.</li>
+</ul>
+
+<h2 id="sources">4. Sources of personal data</h2>
+<p>We collect personal data:</p>
+<ul>
+  <li><strong>Directly from you</strong> — display name, photos, bio, etc.</li>
+  <li><strong>From your device</strong> — GPS, accelerometer, magnetometer (only while the app is running), push token.</li>
+  <li><strong>From third parties you connect to</strong> — Apple ID and/or Google account profile (name, email, stable user ID).</li>
+  <li><strong>From service partners</strong> — moderation labels from AWS Rekognition; verification result from Stripe Identity (when used); receipt validity from Apple/Google.</li>
+</ul>
+
+<h2 id="purposes">5. Purposes &amp; lawful bases for processing</h2>
 
 <table>
-  <tr><th align="left">Purpose</th><th align="left">Data</th><th align="left">Lawful basis</th></tr>
-  <tr><td>Operating the Service: showing nearby people, enabling messaging, applying filters</td><td>Profile, photos, location, filters</td><td>Performance of contract (Art. 6(1)(b) GDPR)</td></tr>
-  <tr><td>Authenticating you</td><td>Apple/Google identifier, session tokens</td><td>Performance of contract</td></tr>
-  <tr><td>Safety, fraud prevention, abuse handling, age verification</td><td>Reports, blocks, device signals, profile data</td><td>Legitimate interests (Art. 6(1)(f))</td></tr>
-  <tr><td>Premium subscriptions and entitlement</td><td>IAP receipts</td><td>Performance of contract</td></tr>
-  <tr><td>Crash diagnostics and basic product analytics</td><td>Device signals, anonymous usage events</td><td>Legitimate interests; you may opt out from device settings</td></tr>
-  <tr><td>Sending push notifications you opted into</td><td>Push token, message metadata</td><td>Consent (Art. 6(1)(a))</td></tr>
-  <tr><td>Complying with legal obligations</td><td>As required by law</td><td>Legal obligation (Art. 6(1)(c))</td></tr>
+  <tr><th>Purpose</th><th>Categories used</th><th>Lawful basis (GDPR / UK GDPR)</th><th>Legal basis (KVKK)</th></tr>
+  <tr><td>Operating the Service: discovery, messaging, filters, profile</td><td>3.1, 3.2, 3.3, 3.4</td><td>Art. 6(1)(b) — performance of contract</td><td>m.5/2(c) — sözleşmenin kurulması veya ifasıyla doğrudan ilgili</td></tr>
+  <tr><td>Authenticating you and keeping your session</td><td>3.1, 3.6</td><td>Art. 6(1)(b)</td><td>m.5/2(c)</td></tr>
+  <tr><td>Safety, fraud prevention, abuse handling, enforcement of Terms, age check</td><td>3.4, 3.5, 3.6, 3.8</td><td>Art. 6(1)(f) — legitimate interests; Art. 9(2)(g) where applicable</td><td>m.5/2(f) — meşru menfaat</td></tr>
+  <tr><td>Premium subscriptions, gifts, boost, billing</td><td>3.7</td><td>Art. 6(1)(b)</td><td>m.5/2(c)</td></tr>
+  <tr><td>Receipts &amp; financial records (statutory retention)</td><td>3.7</td><td>Art. 6(1)(c) — legal obligation</td><td>m.5/2(a) — kanunlarda açıkça öngörülmesi</td></tr>
+  <tr><td>Crash diagnostics &amp; basic product analytics</td><td>3.6</td><td>Art. 6(1)(f)</td><td>m.5/2(f)</td></tr>
+  <tr><td>Push notifications</td><td>3.4, 3.6</td><td>Art. 6(1)(a) — consent (you grant push permission); Art. 6(1)(b)</td><td>m.5/2(a) açık rıza, m.5/2(c)</td></tr>
+  <tr><td>Identity / age verification (optional)</td><td>3.5</td><td>Art. 6(1)(c) where required by local law; Art. 6(1)(b) otherwise</td><td>m.5/2(a), m.5/2(c)</td></tr>
+  <tr><td>Defending or asserting legal claims, regulatory cooperation</td><td>any</td><td>Art. 6(1)(f), Art. 9(2)(f)</td><td>m.5/2(e) — hakkın tesisi/kullanılması/korunması</td></tr>
 </table>
 
-<h2 id="location">5. Precise location and the 105 m radius</h2>
-<p>Deerby is built around a strict locality rule. By default, you can <strong>only see and be
-seen by users within 105 metres</strong> of your current precise location. Outside that
-radius you do not appear in their map and they do not appear in yours, regardless of
-mutual interest. This radius is enforced server-side by the discovery query
-(<code>discover_nearby</code>) and the messaging permission check (<code>can_message</code>).</p>
-<p>Premium users can browse the map outside the 105 m radius and send up to 10 long-range
-messages per active subscription period.</p>
-<p>The app refuses to operate without precise (full-accuracy) location permission. You can
-turn off location anytime; the app will then become inactive.</p>
+<h2 id="location">6. Precise location, the 105 m rule, and ±30 m fuzz</h2>
+<p>Deerby's discovery rule is enforced server-side. Specifically, the SQL function <code>discover_nearby</code> filters candidates with PostGIS <code>ST_DWithin(location, target, 105)</code>. Premium users can ask the same function with a larger radius. Your coordinates only leave our servers in three places:</p>
+<ol>
+  <li>Inside <code>discover_nearby</code> when the caller is you (we don't return your own row).</li>
+  <li>As anonymised aggregated bins inside <code>discover_heatmap</code> (cells with fewer than 3 users are hidden — k-anonymity).</li>
+  <li>To you, when you display your own pin on your own map.</li>
+</ol>
+<p>If you enable <strong>Approximate location</strong>, the discovery and heatmap queries apply a deterministic ±30 m offset before any distance comparison. This means strangers can never tell whether you are at coordinates X or coordinates Y±30 m. Your <em>stored</em> point is still your real point — we do this so that turning the toggle off restores accuracy without losing any data. The ±30 m offset is keyed to a stable random seed per user so it doesn't fluctuate over time.</p>
+<p><strong>We never operate your location in the background.</strong> Apple's iOS will always show the blue location indicator when our app is using your position. The Android equivalent is the green / blue shield icon.</p>
 
-<h2 id="ghost">6. Ghost mode</h2>
-<p>You can enable <strong>Ghost mode</strong> at any time. While Ghost mode is on, your profile is
-hidden from everyone <em>and</em> you cannot see anyone else. Your location is also not
-written to our servers while Ghost mode is on.</p>
-
-<h2 id="chats">7. Messages, mutual rule, 24-hour auto-delete</h2>
-<p>If User A sends the first message of a conversation and User B does not reply within
-<strong>24 hours</strong>, the conversation is <strong>permanently deleted</strong> from our
-database, including all of its messages. Once both users have sent at least one message,
-the conversation becomes mutual and will be retained until either user deletes it or
-deletes their account. We display a clear warning at the start of every new conversation.</p>
-
-<h2 id="share">8. Who we share data with</h2>
-<p>We share personal data only with the following categories of recipients, and only to the
-extent necessary:</p>
+<h2 id="ghost">7. Ghost mode &amp; safe zones</h2>
+<p>While Ghost mode is on:</p>
 <ul>
-  <li><strong>Supabase, Inc.</strong> — our backend and database provider (authentication, Postgres database, file storage, realtime). Data is processed under a Data Processing Addendum.</li>
-  <li><strong>Apple Inc.</strong> — Apple Sign-In and StoreKit purchases (iOS).</li>
-  <li><strong>Google LLC</strong> — Google Sign-In, Play Billing, and (Android only) Google Maps.</li>
-  <li><strong>Apple Push Notification Service / Firebase Cloud Messaging</strong> — for delivering push notifications when you opt in.</li>
-  <li><strong>Law-enforcement or regulators</strong>, when we are legally required.</li>
+  <li>Other users do not see you in <code>discover_nearby</code>.</li>
+  <li>You do not see other users either (this is a <em>mutual</em> rule by design).</li>
+  <li>Your client stops writing your location to the server. Your last known point remains until it is overwritten or cleared by the offline-cron after 10 minutes.</li>
 </ul>
-<p>We do <strong>not</strong> sell your personal data and we do <strong>not</strong> share it with advertising networks.</p>
+<p>Safe zones (your home, work, gym, etc.) auto-enable Ghost mode the moment your phone reports a position inside the zone radius. We never log <em>"User entered Safe Zone X"</em> events; we just flip the bit on the profile row.</p>
+<p>Quiet hours work similarly: during the window you set, a SQL cron flips Ghost on, and the discovery query treats you as if you were already in Ghost.</p>
 
-<h2 id="transfer">9. International data transfers</h2>
-<p>Our backend may store data on servers located outside your country (typically in the EU
-or the United States, depending on the Supabase region you connect to). Where required,
-transfers are governed by the European Commission's Standard Contractual Clauses or an
-equivalent safeguard.</p>
-
-<h2 id="security">10. Security</h2>
-<p>We use TLS in transit, at-rest encryption on our managed database and object storage,
-and strict row-level-security policies so that one user can only read or modify their
-own private data. Authentication tokens are stored in the device's secure storage. No
-system is perfectly secure; you are responsible for keeping your sign-in credentials
-safe.</p>
-
-<h2 id="retention">11. Retention</h2>
+<h2 id="chats">8. Messages, the 24-hour rule &amp; encryption in transit</h2>
+<p>Messages are stored in our database in <em>plaintext</em>; they are not end-to-end encrypted. They are protected:</p>
 <ul>
-  <li>Profile and photos: as long as your account exists.</li>
-  <li>Location: only the most recent point is kept; it is overwritten on every update and cleared 30 days after you go inactive.</li>
-  <li>Non-mutual conversations: deleted automatically 24 hours after the first message if there is no reply.</li>
-  <li>Mutual conversations: until either party deletes the conversation or their account.</li>
-  <li>IAP receipts: retained for the duration of your subscription plus the period required by tax/audit law (typically 6 years).</li>
-  <li>Crash logs: maximum 90 days.</li>
+  <li>In transit, by TLS 1.2+ (HTTPS to Supabase, encrypted realtime websockets).</li>
+  <li>At rest, by managed disk encryption on the Supabase Postgres cluster.</li>
+  <li>By row-level security (RLS) policies, so only the two participants can read a row.</li>
 </ul>
+<p>If User A sends the first message of a new conversation and User B does not reply within <strong>24 hours</strong>, the conversation row and every message inside it are <strong>permanently deleted</strong> from our active database by an automated job (every 5 minutes). Once both sides have replied at least once, the conversation becomes mutual and is retained until either party deletes it or deletes their account. Deleted messages cannot be restored.</p>
 
-<h2 id="rights">12. Your rights</h2>
-<p>Depending on your jurisdiction, you have the right to access, correct, delete, restrict,
-port, or object to the processing of your personal data, and to lodge a complaint with
-your local data protection authority. You can exercise the most common rights directly
-in the app:</p>
+<h2 id="sharing">9. With whom we share data</h2>
+<p>We share personal data only with the following recipients and only to the extent necessary:</p>
+
+<table>
+<tr><th>Recipient</th><th>Role</th><th>What we share</th><th>Where</th><th>Safeguard</th></tr>
+<tr><td>Supabase, Inc.</td><td>Backend / database / storage / auth processor</td><td>Almost all categories above (3.1–3.8)</td><td>EU (Frankfurt) by default, US fallback</td><td>DPA + SCCs</td></tr>
+<tr><td>Apple Inc.</td><td>Sign-In, StoreKit IAP, push notifications via APNs</td><td>3.1, 3.6, 3.7</td><td>USA</td><td>Apple Privacy Policy + DPA</td></tr>
+<tr><td>Google LLC</td><td>Sign-In, Play Billing, Maps SDK on Android, FCM push</td><td>3.1, 3.6, 3.7</td><td>USA / EU</td><td>Google Cloud DPA + SCCs</td></tr>
+<tr><td>Expo, Inc.</td><td>Push relay (exp.host) + EAS build</td><td>Push tokens + message preview</td><td>USA</td><td>Expo DPA</td></tr>
+<tr><td>AWS (Amazon)</td><td>Photo moderation + selfie face‑comparison via Rekognition (only when a photo or selfie is uploaded)</td><td>The image bytes (transient) + moderation labels (persisted on photo row)</td><td>Per the <code>AWS_REGION</code> we configure (default: eu-central-1)</td><td>AWS DPA + SCCs</td></tr>
+<tr><td>Stripe, Inc.</td><td>Optional ID verification (Stripe Identity)</td><td>You upload a document and selfie directly to Stripe; we get a session reference and pass/fail</td><td>USA / EU</td><td>Stripe DPA + SCCs</td></tr>
+<tr><td>Anthropic PBC</td><td>Generation of personalised opening-message suggestions (Claude Haiku)</td><td>The target user's bio / icebreakers (no real names of you or them)</td><td>USA</td><td>Anthropic DPA</td></tr>
+<tr><td>Law-enforcement &amp; regulators</td><td>When legally compelled or to protect life</td><td>Whatever is requested under valid process</td><td>Country of process</td><td>Statutory</td></tr>
+</table>
+
+<p>Subprocessor changes are tracked in this Policy. Material additions are announced in-app at least 7 days before they take effect.</p>
+
+<h2 id="sell">10. We do not "sell" or "share" your personal information</h2>
+<p>We do not sell, rent or lease your personal information to third parties. We do not share your personal information with third parties for cross-context behavioural advertising. There is no "Do Not Sell or Share My Personal Information" link to display because we don't do either; if California law later treats anything we do as a "sale" or "share", we will add the link and the opt-out.</p>
+<p>The Service has <strong>no third-party advertising SDKs</strong>, no IDFA, no Android Advertising ID collection. The iOS Privacy Manifest declares <code>NSPrivacyTracking: false</code> and an empty tracking-domains list.</p>
+
+<h2 id="transfers">11. International data transfers</h2>
+<p>Most of your data sits on our Supabase project in the EU (Frankfurt). When data flows outside your country (e.g., to AWS, Stripe, Anthropic, or to Apple / Google in the United States), we rely on:</p>
 <ul>
-  <li><strong>Access &amp; correction:</strong> from <em>Settings → Profile</em>.</li>
-  <li><strong>Deletion:</strong> from <em>Settings → Delete account</em>. This permanently erases your profile, photos, blocks, filters, and chats.</li>
-  <li>For any other request, write to <a href="mailto:support@musamecit.com">support@musamecit.com</a>.</li>
+  <li>The European Commission's <strong>Standard Contractual Clauses</strong> (Decision (EU) 2021/914 — SCCs) where appropriate;</li>
+  <li>For UK transfers, the UK <strong>International Data Transfer Addendum</strong> to the SCCs;</li>
+  <li>For Türkiye, your <strong>açık rıza (explicit consent)</strong> under KVKK m.9 when the destination is not a country with adequate protection per the Kişisel Verileri Koruma Kurulu list.</li>
 </ul>
 
-<h2 id="children">13. Children</h2>
-<p>Deerby is not directed to children under 18 and we do not knowingly collect data from
-them. If you believe a child has used Deerby, please contact us immediately and we will
-delete the account.</p>
+<h2 id="retention">12. How long we keep what (retention table)</h2>
+<table>
+<tr><th>Data</th><th>Default retention</th><th>Trigger that ends retention</th></tr>
+<tr><td>Profile, photos, bio</td><td>While account exists</td><td>Account deletion</td></tr>
+<tr><td>Precise location (most recent point)</td><td>Continuously overwritten; cleared 30 days after inactivity</td><td>Inactivity / Ghost / deletion</td></tr>
+<tr><td>Non-mutual conversation</td><td>Up to 24 hours after the first message</td><td>No reply → automatic purge</td></tr>
+<tr><td>Mutual conversation</td><td>Until either party deletes</td><td>Manual deletion</td></tr>
+<tr><td>Messages within a kept conversation</td><td>Same as conversation</td><td>Conversation/account deletion</td></tr>
+<tr><td>Encounters log</td><td>21 days (cron at 04:00 UTC)</td><td>Cron purge</td></tr>
+<tr><td>Familiar-face alerts</td><td>Until you tap them; then 21 days</td><td>Cron purge</td></tr>
+<tr><td>Profile visit logs</td><td>90 days (rolling)</td><td>Cron purge</td></tr>
+<tr><td>Verification selfies</td><td>30 days max; immediately on approval/rejection</td><td>Decision or expiry</td></tr>
+<tr><td>Push tokens</td><td>While the device stays active; revoked tokens removed nightly</td><td>Device removal</td></tr>
+<tr><td>IAP receipts &amp; subscription state</td><td>Subscription duration + 6 years (audit / tax)</td><td>Statutory retention end</td></tr>
+<tr><td>Consent log</td><td>6 years after the last action of yours we processed</td><td>Statutory retention end</td></tr>
+<tr><td>Crash &amp; product analytics</td><td>90 days</td><td>Cron purge</td></tr>
+<tr><td>Reports / blocks</td><td>Until account deleted; retained anonymised for safety analytics for 1 year afterwards</td><td>Anonymisation</td></tr>
+<tr><td>Encrypted backups</td><td>30 days maximum</td><td>Backup rotation</td></tr>
+</table>
 
-<h2 id="cookies">14. Cookies and analytics</h2>
-<p>The mobile app does not use browser cookies. We use a minimal set of crash and product
-analytics events (no advertising IDs). You can disable analytics permission from your
-device's privacy settings (iOS: "Allow Apps to Track" / "Analytics &amp; Improvements"; Android:
-opt-out of personalised data sharing).</p>
+<h2 id="security">13. Security measures</h2>
+<p>We use, among others, the following safeguards:</p>
+<ul>
+  <li><strong>Row-Level Security (RLS)</strong> policies on every table — database-level enforcement that one user can only read or modify rows that belong to them.</li>
+  <li><strong>TLS 1.2+</strong> in transit; certificate pinning is on our roadmap.</li>
+  <li><strong>Disk encryption at rest</strong> on the managed Postgres cluster and object storage.</li>
+  <li>Authentication tokens kept in <strong>iOS Keychain / Android Keystore</strong>.</li>
+  <li>Sign in with Apple uses a cryptographic 256-bit nonce per attempt.</li>
+  <li><strong>Edge Functions</strong> run with the service-role JWT only on the server side and never expose it to the client.</li>
+  <li>Private bucket for selfies (never publicly readable, never directly URL-accessible).</li>
+  <li>Automated photo content moderation (AWS Rekognition) with a 30-minute fallback so failed checks default to a permissive but auditable state.</li>
+  <li>Rate limiting at the platform level; abuse protections at the application level.</li>
+</ul>
+<p>No system is perfectly secure. We rely on you to keep your sign-in credentials safe.</p>
 
-<h2 id="payments">15. Premium &amp; in-app purchases</h2>
-<p>Subscriptions are processed by <strong>Apple In-App Purchase</strong> on iOS and
-<strong>Google Play Billing</strong> on Android. We do not see or store payment credentials.
-Receipt validation is performed server-side. Refunds are handled by Apple or Google
-according to their store policies. Auto-renewal is managed in your store account.</p>
+<h2 id="rights">14. Your rights</h2>
+<p>Under GDPR (Articles 15–22), the UK GDPR, KVKK (m.11), CCPA/CPRA, the LGPD (Brazil) and equivalent laws, you have the rights to <strong>access</strong>, <strong>rectify</strong>, <strong>erase</strong>, <strong>restrict</strong> processing, <strong>object</strong>, <strong>port</strong> your data and <strong>not be subject to automated decision-making with legal effect</strong>. You also have the right to <strong>lodge a complaint</strong> with your local data protection authority.</p>
+<p>How to exercise the most common rights, directly in the app:</p>
+<ul>
+  <li><strong>Access &amp; portability:</strong> <em>Settings → Download my data</em> exports a machine-readable JSON of every row attached to your account.</li>
+  <li><strong>Rectification:</strong> <em>Settings → Profile / Edit profile / Filters / Safety &amp; Privacy</em>.</li>
+  <li><strong>Erasure:</strong> <em>Settings → Delete account</em>. This permanently removes your profile, photos (in both buckets), conversations, blocks, filters, push tokens, gifts, encounters and your auth identity. Receipts and the consent log are retained as required by law for the period in <a href="#retention">section 12</a>.</li>
+  <li><strong>Restriction / objection:</strong> write to <a href="mailto:privacy@musamecit.com">privacy@musamecit.com</a>.</li>
+  <li><strong>No automated decision-making</strong> with legal or similarly significant effect is performed by Deerby. Profile visibility ranking, content moderation flags and verification scores are advisory; a human can always override them.</li>
+</ul>
+<p>We respond to verifiable requests within <strong>30 days</strong> (extendable by 60 days for complex requests, with notice).</p>
 
-<h2 id="changes">16. Changes to this policy</h2>
-<p>We may update this policy. Material changes will be announced inside the app at least 7
-days before they take effect. The "Effective date" above always reflects the current
-version. Past versions are available on request.</p>
+<h2 id="children">15. Children</h2>
+<p>Deerby is not directed at children under 18 and we do not knowingly collect data from them. If you believe a minor is using Deerby, please contact us at <a href="mailto:safety@musamecit.com">safety@musamecit.com</a> and we will delete the account on the same business day.</p>
 
-<h2 id="contact">17. Contact</h2>
-<p>Questions, requests, complaints:
-<a href="mailto:support@musamecit.com">support@musamecit.com</a>.</p>
+<h2 id="dnt">16. Cookies, analytics, "Do Not Track"</h2>
+<p>The mobile app does not use browser cookies. We do not use third-party advertising SDKs and we do not collect IDFA or Google Advertising ID. We do not respond to browser "Do Not Track" headers because the mobile app does not use a browser. We honour iOS App Tracking Transparency by simply not asking — we do not track users across apps or websites.</p>
+
+<h2 id="payments">17. Premium &amp; in-app purchases</h2>
+<p>All purchases (subscriptions, gifts, boosts) are processed by <strong>Apple In-App Purchase</strong> on iOS and <strong>Google Play Billing</strong> on Android. We do not see your payment instrument. Receipt validation is performed server-side by our <code>validate-iap</code> Edge Function, which calls Apple's <code>verifyReceipt</code> endpoint or the Play Developer API. Refunds are handled by Apple or Google according to their store policies. Subscription auto-renewal is managed entirely in your store account.</p>
+
+<h2 id="deceased">18. Deceased users</h2>
+<p>If you let us know that an account belongs to someone who has died and you can prove your relationship to them and/or your legal authority, we can either delete the account or, where law permits, freeze it for a successor's claim. Write to <a href="mailto:privacy@musamecit.com">privacy@musamecit.com</a>.</p>
+
+<h2 id="breach">19. Data breach response</h2>
+<p>If a personal-data breach occurs that is likely to result in a risk to your rights and freedoms, we will notify the relevant supervisory authority within <strong>72 hours</strong> of becoming aware of it (GDPR Art. 33), and notify affected users without undue delay (Art. 34). Türkiye notifications under KVKK m.12/5 will be filed with the Kurul "in the shortest time" (typically interpreted as 72 hours).</p>
+
+<h2 id="changes">20. Changes to this Policy</h2>
+<p>We may update this Policy. <strong>Material</strong> changes (i.e., changes that materially expand the categories of data we collect, the purposes for which we use it, or our recipients) will be announced inside the app at least <strong>7 days</strong> before they take effect, and will be posted at this URL with an updated effective date. Continued use of the Service after the effective date constitutes acceptance of the updated Policy. Past versions are available on request.</p>
+
+<h2 id="contact">21. Contact &amp; complaints</h2>
+<p>For any privacy question or to exercise a right: <a href="mailto:privacy@musamecit.com">privacy@musamecit.com</a> or <a href="mailto:support@musamecit.com">support@musamecit.com</a>.</p>
+<p>If you are not satisfied with our response, you may complain to:</p>
+<ul>
+  <li><strong>Türkiye:</strong> Kişisel Verileri Koruma Kurumu — <a href="https://www.kvkk.gov.tr">kvkk.gov.tr</a></li>
+  <li><strong>EU/EEA:</strong> the supervisory authority of your habitual residence (full list at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">edpb.europa.eu</a>).</li>
+  <li><strong>UK:</strong> Information Commissioner's Office — <a href="https://ico.org.uk">ico.org.uk</a>.</li>
+  <li><strong>California:</strong> Attorney General — <a href="https://oag.ca.gov/privacy">oag.ca.gov/privacy</a>.</li>
+</ul>
 
 </section>
 
 <hr/>
 
 <section id="tr">
+<h2>22. KVKK Aydınlatma Metni (Türkiye)</h2>
+<p><strong>Veri Sorumlusu:</strong> Mustafa Mecit (gerçek kişi tacir/şahıs işletmesi).<br/>
+<strong>İletişim:</strong> <a href="mailto:privacy@musamecit.com">privacy@musamecit.com</a></p>
 
-<h2>Deerby — Gizlilik Politikası (Türkçe Özet)</h2>
-<p><em>Yürürlük: 2 Mayıs 2026 · Sürüm 1.0</em></p>
+<h3>22.1 İşlenen kişisel veri kategorileri</h3>
+<p>Kimlik verisi (görünen ad, doğum tarihi), iletişim verisi (e-posta), müşteri işlem verisi (mesajlar, hediyeler, abonelik), <strong>özel nitelikli olabilecek veriler</strong> (cinsel yönelim/cinsiyet, ilişki tercihi — siz açıkça paylaşmayı seçtiyseniz, KVKK m.6 kapsamında <em>açık rıza</em> ile), konum verisi (tam GPS, son konum güncellenme zamanı), görsel veriler (profil fotoğraflarınız, isteğe bağlı doğrulama selfie'si), pazarlama/analitik verisi (cihaz türü, sürüm, çökme kayıtları), işlem güvenliği verisi (push token, oturum tokenları), finansal veri (Apple/Google'dan gelen makbuzlar — kart bilgileri Apple/Google'da kalır).</p>
 
-<p>Bu politika, Mustafa Mecit ("Operatör") tarafından sunulan Deerby uygulamasının kişisel
-verilerinizi nasıl topladığını, kullandığını ve koruduğunu KVKK, GDPR ve Apple/Google
-politikaları doğrultusunda açıklar. Aşağıdaki Türkçe özet bilgi amaçlıdır; bağlayıcı sürüm
-İngilizce metindir.</p>
+<h3>22.2 İşleme amaçları</h3>
+<p>Hizmetin sunulması, sözleşmenin ifası (KVKK m.5/2-c), güvenlik ve dolandırıcılığın önlenmesi (m.5/2-f meşru menfaat), yaş doğrulamanın sağlanması, abonelik hak yönetimi, hukuki yükümlülüklerin yerine getirilmesi (m.5/2-a), açık rızanıza dayalı bildirimler ve isteğe bağlı analitik (m.5/2-a açık rıza).</p>
 
-<h3>Toplanan veriler</h3>
+<h3>22.3 Aktarım</h3>
+<p>Veriler altyapı sağlayıcımız <strong>Supabase, Inc.</strong> (AB - Frankfurt), <strong>Apple Inc.</strong> (ABD), <strong>Google LLC</strong> (ABD), <strong>Amazon Web Services</strong> (yapılandırdığımız bölge), <strong>Stripe, Inc.</strong> (kimlik doğrulama açıkken — ABD/AB), <strong>Anthropic PBC</strong> (mesaj başlatıcı önerileri açıkken — ABD), <strong>Expo, Inc.</strong> (push servisi — ABD) tarafından sunucularda işlenir. Yurt dışı aktarımlarda KVKK m.9'a uygun olarak <strong>açık rızanız</strong> alınmaktadır; ayrıca AB-ABD/UK için <strong>Standart Sözleşme Hükümleri</strong> uygulanır.</p>
+
+<h3>22.4 Saklama süreleri</h3>
+<p>Politikamızın 12. bölümündeki tabloda detaylıdır; en kısa özet: konum yalnızca son nokta + 30 gün; mutlu olmayan sohbetler 24 saat; hesap mevcut olduğu sürece profil; ödeme makbuzları 6 yıl (vergi/denetim).</p>
+
+<h3>22.5 Haklarınız (KVKK m.11)</h3>
+<p>Kişisel verilerinize ilişkin (a) işlenip işlenmediğini öğrenme, (b) bilgi talep etme, (c) işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, (ç) yurt içinde veya yurt dışında aktarılan tarafları bilme, (d) eksik veya yanlış işlenmiş verilerin düzeltilmesini isteme, (e) m.7 koşulları varsa silinmesini/yok edilmesini isteme, (f) (d) ve (e) bentlerine göre yapılan işlemlerin aktarıldığı 3. kişilere bildirilmesini isteme, (g) işlenmiş verilerin münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme ve (ğ) zarar uğramanız halinde tazminat talep etme haklarınız vardır.</p>
+<p>Bu haklarınızı kullanmak için <em>Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ</em>'e uygun olarak Türkçe yazılı başvurunuzu kimliğinizi tespit edici belgelerle birlikte yukarıdaki e-posta adresine iletebilirsiniz. Kurul 30 gün içinde cevap verilmesini öngörür.</p>
+
+<h3>22.6 Otomatik karar verme</h3>
+<p>Deerby, sizin aleyhinize <strong>hukuki sonuç doğuran</strong> otomatik karar üretmez. İçerik moderasyon etiketleri ve yüz eşleşme skorları yardımcı niteliktedir; gerektiğinde insan denetimi devreye girer.</p>
+</section>
+
+<hr/>
+
+<section id="california">
+<h2>23. California Privacy Notice (CCPA / CPRA)</h2>
+
+<h3>23.1 Categories of personal information</h3>
+<p>Categories collected in the last 12 months and the corresponding CCPA enumeration codes:</p>
 <ul>
-  <li>Hesap: Apple/Google ile aldığınız kullanıcı kimliği, e-posta, görünen isim, doğum tarihi, cinsiyet, arayışınız, isteğe bağlı biyo, boy, ilişki durumu.</li>
-  <li>3-6 profil fotoğrafı (sizin yüklediğiniz).</li>
-  <li>Yalnızca uygulama açıkken alınan <strong>tam GPS konumu</strong> ve son güncelleme zamanı.</li>
-  <li>Mesajlar ve meta verileri, engelleme/şikayet kayıtları.</li>
-  <li>Cihaz tipi, OS sürümü, dil, saat dilimi, anonim çökme kayıtları.</li>
-  <li>Premium alanlar için Apple/Google ödeme makbuzları (kart bilgileriniz bize ulaşmaz).</li>
+  <li>Identifiers (name, email, user ID) — §1798.140(o)(1)(A) ✓</li>
+  <li>Customer-records information — §1798.140(o)(1)(B) ✓ (when you fill profile fields)</li>
+  <li>Characteristics of protected classifications — §1798.140(o)(1)(C) <em>only when you choose to share gender / sexual orientation</em></li>
+  <li>Commercial information — §1798.140(o)(1)(D) ✓ (subscriptions, gifts)</li>
+  <li>Internet / electronic activity — §1798.140(o)(1)(F) ✓ (in-app interactions)</li>
+  <li>Geolocation — §1798.140(o)(1)(G) ✓ (precise location while in use)</li>
+  <li>Audio / electronic / visual — §1798.140(o)(1)(H) ✓ (profile photos, optional selfie)</li>
+  <li>Inferences — §1798.140(o)(1)(K) ✓ (familiar-face encounter inference, vibe matching)</li>
+  <li>Sensitive personal information (CPRA) — precise geolocation; account log-in credentials; sexual orientation in some cases. Use is limited to providing the Service per §1798.121.</li>
 </ul>
 
-<h3>Kullanım amaçları (KVKK m.5)</h3>
-<p>Sözleşmenin kurulması/ifası, hizmetin sunulması, güvenlik, dolandırıcılık ve istismarın
-önlenmesi, Premium hak yönetimi, yasal yükümlülüklerin yerine getirilmesi, açık rızanıza
-bağlı olduğu durumlarda push bildirim ve isteğe bağlı analiz.</p>
+<h3>23.2 Sources</h3>
+<p>From you, from your device sensors, and from third-party processors as listed in <a href="#sharing">section 9</a>.</p>
 
-<h3>105 m kuralı ve Hayalet Mod</h3>
-<p>Yalnızca tam konumu açık tutan ve 105 m yarıçap içindeki kullanıcılar birbirini görebilir.
-Premium kullanıcı bu sınırı aşabilir ve dönem başına 10 uzak mesafe mesajı gönderebilir.
-Hayalet Modu açıldığında ne sizi görenler olur ne siz başkalarını görürsünüz; bu sırada
-konumunuz sunucuya yazılmaz.</p>
+<h3>23.3 Sale, sharing, retention</h3>
+<p>We <strong>do not sell or share</strong> personal information for cross-context behavioural advertising. We retain personal information for the periods detailed in <a href="#retention">section 12</a>.</p>
 
-<h3>24 saat kuralı</h3>
-<p>İlk mesaj 24 saat içinde cevaplanmazsa sohbet ve içindeki tüm mesajlar kalıcı olarak
-silinir. İki taraf da en az birer mesaj attıysa sohbet kalıcı sayılır.</p>
+<h3>23.4 Your California rights</h3>
+<ul>
+  <li><strong>Right to know</strong> (categories, specific pieces) — exercise via <em>Settings → Download my data</em> or by emailing <a href="mailto:privacy@musamecit.com">privacy@musamecit.com</a>.</li>
+  <li><strong>Right to delete</strong> — <em>Settings → Delete account</em>.</li>
+  <li><strong>Right to correct</strong> — <em>Settings → Profile</em> and related screens.</li>
+  <li><strong>Right to limit use of sensitive personal information</strong> — geolocation is essential to the Service; you can stop providing it at any time by closing the app or revoking permission. Sexual orientation is optional and you can clear it.</li>
+  <li><strong>Right to opt out of sale/share</strong> — not applicable because we don't sell or share.</li>
+  <li><strong>Right to non-discrimination</strong> — exercising your rights will not affect your access to the Service.</li>
+</ul>
+<p>You may designate an authorised agent to make a request on your behalf. We will verify the agent's authority via signed permission plus identity verification of you.</p>
+</section>
 
-<h3>Veri paylaşımı</h3>
-<p>Yalnızca: Supabase (altyapı), Apple, Google, push servisleri ve yasal merciler. Reklam
-ağlarıyla veri paylaşmayız ve verinizi satmayız.</p>
+<hr/>
 
-<h3>Saklama süreleri</h3>
-<p>Profil ve fotoğraflar hesabınız varken; konum yalnızca son nokta + 30 gün; mesutlu
-sohbetler taraflar silmedikçe; mutlu olmayan sohbetler en fazla 24 saat; ödeme makbuzları
-6 yıla kadar; çökme logları 90 gün.</p>
+<section id="eea">
+<h2>24. EEA / UK GDPR addendum</h2>
 
-<h3>Haklarınız (KVKK m.11 / GDPR Art.15-22)</h3>
-<p>Erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve itiraz haklarınız vardır.
-Hesabınızı uygulamadaki <em>Ayarlar → Hesabı sil</em> ile kalıcı silebilirsiniz. Diğer talepler
-için: <a href="mailto:support@musamecit.com">support@musamecit.com</a>.</p>
+<h3>24.1 Article 13 disclosures (already covered above, summarised here)</h3>
+<ul>
+  <li><strong>Identity / contact of controller:</strong> see <a href="#scope">section 1</a>.</li>
+  <li><strong>Purposes &amp; lawful bases:</strong> see <a href="#purposes">section 5</a>.</li>
+  <li><strong>Recipients:</strong> see <a href="#sharing">section 9</a>.</li>
+  <li><strong>Transfers:</strong> see <a href="#transfers">section 11</a>.</li>
+  <li><strong>Retention:</strong> see <a href="#retention">section 12</a>.</li>
+  <li><strong>Your rights:</strong> see <a href="#rights">section 14</a>.</li>
+  <li><strong>Right to withdraw consent</strong> at any time without affecting prior processing.</li>
+  <li><strong>Right to lodge a complaint</strong> with a supervisory authority — see <a href="#contact">section 21</a>.</li>
+  <li><strong>Whether providing data is statutory or contractual:</strong> contractual; you cannot use the Service without providing the data marked as required.</li>
+  <li><strong>Existence of automated decision-making with legal effect:</strong> none.</li>
+</ul>
+
+<h3>24.2 Special categories</h3>
+<p>Sexual orientation and detailed gender identity may, in some interpretations, fall under "special categories" (Article 9). We process them only with your explicit consent (Article 9(2)(a)), only to operate the discovery feature you asked for. You may delete or change these fields at any time in <em>Settings → Profile</em>.</p>
+
+<h3>24.3 Right to be forgotten interplay</h3>
+<p>If you exercise the right to erasure, we delete or anonymise data within 30 days. The consent log, IAP receipts and certain abuse-investigation rows are retained per Article 17(3)(b) and (e) — for legal claims and for safety-related interests of other users.</p>
 
 </section>
 
 <hr/>
-<p class="muted">© 2026 Mustafa Mecit. Deerby is a trademark of the Operator.</p>
+<p class="muted">© 2026 Mustafa Mecit. Deerby is a trademark of the Operator. This document is licenced for re-reading by you, not for redistribution as your own.</p>
 
 </body>
 </html>

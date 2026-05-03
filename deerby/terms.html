@@ -8,23 +8,28 @@
 :root { --ink:#2C1810; --primary:#B8754A; --muted:#7A6657; --cream:#FDF6EC; --divider:#EADBC2; }
 * { box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-       max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; color: var(--ink); background: var(--cream);
+       max-width: 800px; margin: 0 auto; padding: 32px 20px 80px; color: var(--ink); background: var(--cream);
        line-height: 1.6; }
-h1 { font-size: 32px; margin: 0 0 4px; }
-h2 { font-size: 22px; margin-top: 36px; color: var(--primary); }
+h1 { font-size: 30px; margin: 0 0 4px; }
+h2 { font-size: 22px; margin-top: 36px; color: var(--primary); border-top: 1px solid var(--divider); padding-top: 16px; }
 h3 { font-size: 17px; margin-top: 22px; }
-p, li { font-size: 16px; }
+p, li { font-size: 15px; }
 a { color: var(--primary); }
 .muted { color: var(--muted); font-size: 14px; }
 hr { border: 0; border-top: 1px solid var(--divider); margin: 32px 0; }
 .toc { background: #fff; border: 1px solid var(--divider); padding: 16px 20px; border-radius: 12px; }
 .toc ol { margin: 8px 0 0 18px; padding: 0; }
-code { background: #fff; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--divider); font-size: 14px; }
+.callout { background: #FFF3CC; border-left: 4px solid #E0A82E; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+.danger { background: #FBE3E5; border-left: 4px solid #E94B5A; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+.legal { background: #fff; border: 1px solid var(--divider); padding: 12px 16px; border-radius: 6px; margin: 16px 0; font-size: 14px; }
+.allcaps { text-transform: uppercase; font-size: 13px; letter-spacing: 0.4px; font-weight: 700; }
 nav.lang { display: flex; gap: 12px; flex-wrap: wrap; padding: 8px 0 16px; font-size: 14px; }
 header { display: flex; align-items: center; gap: 14px; }
 header .logo { width: 56px; height: 56px; background: var(--primary); color: #fff; border-radius: 14px;
                display: grid; place-items: center; font-weight: 800; font-size: 22px; }
-.callout { background: #FFF3CC; border-left: 4px solid #E0A82E; padding: 12px 16px; border-radius: 8px; margin: 16px 0; }
+table { border-collapse: collapse; width: 100%; margin-top: 12px; font-size: 14px; }
+th, td { border: 1px solid var(--divider); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #fff; }
 </style>
 </head>
 <body>
@@ -33,237 +38,245 @@ header .logo { width: 56px; height: 56px; background: var(--primary); color: #ff
   <div class="logo">D</div>
   <div>
     <h1>Deerby — Terms of Service</h1>
-    <div class="muted">Effective date: 2 May 2026 · Version 1.0</div>
+    <div class="muted">Effective date: 2 May 2026 · Version 1.4 · Last updated: 2 May 2026</div>
   </div>
 </header>
 
 <nav class="lang">
-  <a href="#en">English</a> · <a href="#tr">Türkçe</a> · <a href="privacy.html">Privacy Policy</a>
+  <a href="#en">English</a> · <a href="#tr">Türkçe (Kullanım Koşulları)</a> · <a href="#us">United States Addendum</a> · <a href="#eu">EU / UK Addendum</a> · <a href="privacy.html">Privacy Policy</a>
 </nav>
+
+<div class="callout">
+<strong>Read this before you tap "I accept".</strong> These Terms include important provisions: a binding arbitration agreement and class-action waiver for users in the United States, a limitation of our liability, your representation that you are <strong>at least 18 years old</strong>, and your obligation to indemnify us in certain circumstances. Section numbers below tell you exactly where.
+</div>
 
 <hr/>
 
 <section id="en">
 
-<p>These Terms of Service ("Terms") form a binding agreement between you ("you", "User")
-and Mustafa Mecit ("Operator", "we", "us", "our"), governing your access to and use of
-the Deerby mobile application and any associated services (together, the "Service"). By
-creating an account, signing in, or using the Service in any way, you agree to these
-Terms. If you do not agree, do not use Deerby.</p>
-
-<div class="callout">
-  <strong>Important.</strong> Deerby is a location-based social application for adults.
-  Use of the Service requires precise location permission, an account created via Apple
-  Sign-In or Google Sign-In, and a completed profile (display name, date of birth,
-  gender, "looking for", at least three photos).
-</div>
+<p>These Terms of Service (the "<strong>Terms</strong>") form a binding agreement between you ("you", "<strong>User</strong>") and <strong>Mustafa Mecit</strong>, sole proprietor ("<strong>Operator</strong>", "we", "us", "our"), governing your access to and use of the Deerby mobile application and any associated services (collectively, the "<strong>Service</strong>"). By creating an account, signing in, tapping the "I am 18+ and I accept" button, or using the Service in any way, you agree to these Terms and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, do not use Deerby.</p>
 
 <div class="toc">
   <strong>Table of contents</strong>
   <ol>
-    <li><a href="#age">Eligibility (18+)</a></li>
+    <li><a href="#age">Eligibility &amp; the 18+ attestation</a></li>
     <li><a href="#account">Your account</a></li>
     <li><a href="#how">How Deerby works</a></li>
     <li><a href="#location">Precise location is mandatory</a></li>
-    <li><a href="#ghost">Ghost mode</a></li>
+    <li><a href="#ghost">Ghost mode &amp; safe zones</a></li>
     <li><a href="#chats">Conversations &amp; the 24-hour rule</a></li>
     <li><a href="#filters">Filters &amp; visibility</a></li>
     <li><a href="#premium">Deerby Premium &amp; auto-renewing subscription</a></li>
+    <li><a href="#gifts">Digital gifts &amp; consumables</a></li>
+    <li><a href="#boost">Profile boost</a></li>
     <li><a href="#license">Licence we grant you</a></li>
     <li><a href="#content">Your content &amp; licence to us</a></li>
     <li><a href="#conduct">Prohibited conduct</a></li>
-    <li><a href="#safety">Safety, blocking, reporting</a></li>
-    <li><a href="#suspension">Suspension &amp; termination</a></li>
-    <li><a href="#deletion">Account deletion</a></li>
-    <li><a href="#thirdparty">Third-party platforms (Apple, Google, Supabase)</a></li>
+    <li><a href="#safety">Personal safety &amp; in‑person meetings</a></li>
+    <li><a href="#moderation">Moderation, reports, blocks</a></li>
+    <li><a href="#suspension">Suspension &amp; termination by us</a></li>
+    <li><a href="#deletion">Account deletion by you</a></li>
+    <li><a href="#thirdparty">Third-party platforms</a></li>
     <li><a href="#disclaimer">Disclaimers</a></li>
     <li><a href="#liability">Limitation of liability</a></li>
     <li><a href="#indemnity">Indemnification</a></li>
-    <li><a href="#changes">Changes to the Service or Terms</a></li>
-    <li><a href="#governing">Governing law &amp; disputes</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#eula">EULA / Apple Standard EULA notes</a></li>
+    <li><a href="#changes">Changes to Service or Terms</a></li>
+    <li><a href="#governing">Governing law, venue, severability</a></li>
+    <li><a href="#contact">Notices &amp; contact</a></li>
+    <li><a href="#eula">Apple Standard EULA notes</a></li>
+    <li><a href="#tr">Türkçe Tam Metin</a></li>
+    <li><a href="#us">United States Addendum (arbitration &amp; class-action waiver)</a></li>
+    <li><a href="#eu">EU / UK consumer-rights addendum</a></li>
   </ol>
 </div>
 
-<h2 id="age">1. Eligibility</h2>
-<p>You must be at least <strong>18 years old</strong> to create an account or use Deerby. By
-agreeing to these Terms, you represent and warrant that you are 18 or older and have the
-legal capacity to enter into this agreement. We reserve the right to remove any account
-where we have reason to believe the user is under 18.</p>
+<h2 id="age">1. Eligibility &amp; the 18+ attestation</h2>
+
+<div class="danger">
+<span class="allcaps">Important — your express representation.</span>
+<p style="margin: 6px 0 0 0;">By tapping "I am 18+ and I accept" you affirmatively represent and warrant that:</p>
+<ol>
+  <li>You are at least <strong>eighteen (18) years old</strong>, or the age of majority in your jurisdiction if higher (for example, 21 in some U.S. states for certain purposes; check your local law);</li>
+  <li>The date of birth you entered is true and accurate, and you have not modified it to circumvent the age limit;</li>
+  <li>You are <strong>not a registered sex offender</strong> in any jurisdiction;</li>
+  <li>You are <strong>not legally prohibited</strong> from using a location-based social or dating service in your jurisdiction (including, where applicable, while subject to a protective order, a non-contact order or any equivalent court order);</li>
+  <li>You are not signing up on behalf of anyone else, and you are not creating a profile of any third party.</li>
+</ol>
+</div>
+
+<p>We do not require document-based age verification at sign-up, in line with industry practice for adult social and dating apps. Instead, the Operator relies on (a) your express attestation above, (b) the date-of-birth field, (c) Apple's "real-user-status" hint when available, and (d) optional ID verification for a "verified" badge under our Stripe Identity flow when you choose. Your attestation is logged in our <code>consent_log</code> with a timestamp, the document version, and your platform string. <strong>Submitting a false attestation is a material breach of these Terms and may also be a criminal offence under the laws of your jurisdiction.</strong></p>
+
+<p>If we discover, or have a reasonable basis to believe, that an account belongs to a person under 18, we will permanently delete it without notice and without refund of any unused balance.</p>
 
 <h2 id="account">2. Your account</h2>
-<p>You sign in with Apple or Google. You agree to (a) provide accurate and current
-information when setting up your profile; (b) keep your sign-in credentials secure;
-(c) be solely responsible for all activity that occurs under your account; and (d) notify
-us immediately at <a href="mailto:support@musamecit.com">support@musamecit.com</a> if your
-account is compromised. One person may only operate one Deerby account at a time.</p>
+<p>You sign in with Apple Sign-In and/or Google Sign-In. You agree to (a) provide accurate and current information when setting up your profile; (b) keep your sign-in credentials secure; (c) be solely responsible for all activity that occurs under your account; (d) notify us at <a href="mailto:support@musamecit.com">support@musamecit.com</a> immediately if your account is compromised; and (e) maintain a <strong>single account at a time per person</strong>. Creating a duplicate or replacement account after a ban is a separate violation.</p>
 
 <h2 id="how">3. How Deerby works</h2>
-<p>Deerby shows you other users <strong>within 105 metres of your current precise location</strong>,
-filtered by the preferences you set (gender, age range, "looking for"). You may tap a
-user's profile to view it and may message them subject to filter and proximity rules.
-Search by name is intentionally not available — discovery is location-based only.</p>
+<p>Deerby shows you other users <strong>within 105 metres of your current precise location</strong>, filtered by the preferences you set (gender, age range, looking-for). You may tap a user's profile to view it and may message them subject to the filter and proximity rules described below. Search by name is intentionally not available — discovery is location-based only. Deerby is <strong>not</strong> a matchmaking, escort, dating-arrangement, mail-order-bride or compensated-companionship service, and may not be used as such.</p>
 
 <h2 id="location">4. Precise location is mandatory</h2>
-<p>Deerby cannot function without precise (full-accuracy) location permission. By using the
-Service you authorise Deerby to read your foreground location and send it to our backend
-solely to (i) determine other users within 105 m of you and (ii) make you discoverable to
-those users. If you revoke location permission or your device reports a low-accuracy
-location, the Service will pause until permission is restored.</p>
+<p>Deerby cannot function without precise (full-accuracy) location permission. By using the Service you authorise Deerby to read your foreground location and send it to our backend solely to (i) determine other users within 105 m of you and (ii) make you discoverable to those users (subject to your filter, ghost, quiet-hours and safe-zone settings). If you revoke location permission or your device reports a low-accuracy location, the Service will pause until permission is restored. We do not request "Always Allow" background location.</p>
 
-<h2 id="ghost">5. Ghost mode</h2>
-<p>You can enable Ghost mode at any time. While Ghost mode is on, your profile is hidden
-from every other user and you cannot view other users either. Your location is not
-written to our servers during Ghost mode. Ghost mode does not pause your subscription;
-Premium time continues to elapse normally.</p>
+<h2 id="ghost">5. Ghost mode &amp; safe zones</h2>
+<p>You can enable Ghost mode at any time. While Ghost mode is on, your profile is hidden from every other user and you cannot view other users either. Your location is not written to our servers during Ghost. Ghost mode does not pause your subscription; Premium time continues to elapse normally. Safe zones (your home, work, gym, etc.) auto-enable Ghost the moment your phone reports a position inside the zone radius. Quiet hours auto-enable Ghost during the time window you set. None of these features are infallible; you remain responsible for your own appearance/non-appearance on the map.</p>
 
 <h2 id="chats">6. Conversations &amp; the 24-hour rule</h2>
-<p>If you start a conversation by sending the first message and the other user does not
-reply within <strong>24 hours</strong>, the conversation and all of its messages are
-<strong>permanently deleted</strong> from our servers. Once each side has sent at least one
-message, the conversation becomes mutual and is retained until either party deletes it
-or deletes their account. We display a clear warning before each new conversation. We
-do not guarantee delivery, recovery, or restoration of deleted conversations.</p>
+<p>If you start a conversation by sending the first message and the other user does not reply within <strong>24 hours</strong>, the conversation and all of its messages are <strong>permanently deleted</strong> from our servers by an automated job. Once each side has sent at least one message, the conversation becomes mutual and is retained until either party deletes it or deletes their account. We display a clear visual countdown on every non-mutual conversation. We do not guarantee delivery, recovery, or restoration of deleted conversations. Messages are not end-to-end encrypted; see our <a href="privacy.html#chats">Privacy Policy section 8</a>.</p>
 
 <h2 id="filters">7. Filters &amp; visibility</h2>
-<p>You can configure two independent filter sets: who you want to see, and who can message
-you. Both apply on top of the 105 m radius rule. Setting a filter does not guarantee
-specific results — discovery depends on who is online and within range.</p>
+<p>You can configure two independent filter sets: who you want to see, and who can message you. Both apply on top of the 105 m radius rule. Setting a filter does not guarantee specific results — discovery depends on who is online and within range. Boosts give a temporary <em>visibility</em> lift; they do not bypass the 18+ requirement, blocks, or filters set by other users.</p>
 
 <h2 id="premium">8. Deerby Premium &amp; auto-renewing subscription</h2>
-<p>Premium is an auto-renewing weekly subscription priced at <strong>USD 9.99 per week</strong>
-(local equivalent at the store's exchange rate; tax extra where applicable). It unlocks:</p>
-<ul>
-  <li>Discovery of users beyond the 105 m radius;</li>
-  <li>Up to <strong>10 long-range messages</strong> per active subscription period (sent to users outside your 105 m radius);</li>
-  <li>Priority profile visibility.</li>
-</ul>
-<p><strong>Billing.</strong> Payment is processed by Apple In-App Purchase on iOS and Google Play
-Billing on Android. Your subscription auto-renews at the end of each weekly period unless
-cancelled at least 24 hours before renewal. The renewal is charged to your Apple ID or
-Google account. The renewal price is the price disclosed by the store at the time of
-renewal.</p>
-<p><strong>Cancelling.</strong> You can cancel anytime from your device's store account
-(<em>iOS:</em> Settings → Apple ID → Subscriptions; <em>Android:</em> Play Store → Profile →
-Payments &amp; subscriptions → Subscriptions). Cancellation takes effect at the end of the
-current period.</p>
-<p><strong>Refunds.</strong> Refund requests are handled by Apple or Google according to their
-store policies. Where the law of your jurisdiction grants you a right of withdrawal, you
-may exercise it as described in your store's documentation; we will honour any refund
-that the store issues.</p>
-<p><strong>Quota.</strong> Long-range message slots reset at the start of each billing period and
-do not roll over. Unused slots have no cash value and are not refundable.</p>
 
-<h2 id="license">9. Licence we grant you</h2>
-<p>Subject to these Terms, we grant you a limited, personal, non-exclusive, non-sublicensable,
-non-transferable, revocable licence to install and use the Deerby app on devices you own
-or control, solely for your personal, non-commercial use.</p>
+<p>Premium is offered as one of two auto-renewing subscriptions:</p>
 
-<h2 id="content">10. Your content &amp; licence to us</h2>
-<p>You retain ownership of the photos, profile information, and messages you create
-("User Content"). By submitting User Content to the Service, you grant the Operator a
-worldwide, royalty-free, non-exclusive licence to host, store, transmit, display, and
-adapt your User Content strictly to operate the Service (e.g. showing your photos to
-nearby users; delivering your messages). We do not use your User Content for advertising
-and we do not sell it.</p>
-<p>You represent that (i) you own or have all necessary rights to the User Content;
-(ii) it does not infringe anyone's rights; and (iii) it depicts you (for profile photos)
-and was taken with consent of any other identifiable person in it.</p>
+<table>
+<tr><th>Plan</th><th>Length</th><th>Price (US)</th><th>Apple product ID</th><th>Google product ID</th></tr>
+<tr><td>Premium Weekly</td><td>1 week</td><td>USD 9.99</td><td><code>com.musamecit.deerby.premium.weekly</code></td><td><code>deerby_premium_weekly</code></td></tr>
+<tr><td>Premium Yearly</td><td>1 year</td><td>USD 189.00</td><td><code>com.musamecit.deerby.premium.yearly</code></td><td><code>deerby_premium_yearly</code></td></tr>
+</table>
 
-<h2 id="conduct">11. Prohibited conduct</h2>
-<p>You agree not to, and not to attempt to:</p>
+<p>Local prices may differ slightly to match Apple's / Google's pricing matrix. Tax extra where required. Premium unlocks: discovery beyond 105 m; up to <strong>10 long-range messages</strong> per active period (sent to users outside your 105 m radius); priority profile visibility.</p>
+
+<p><strong>Billing.</strong> Payment is processed by Apple In-App Purchase on iOS and Google Play Billing on Android. The subscription auto-renews at the end of each period unless cancelled at least 24 hours before renewal. The renewal is charged to your Apple ID or Google account at the price disclosed by the store at the time of renewal. Apple and Google may change tax rates, exchange rates, regional pricing or payment terms without our involvement.</p>
+
+<p><strong>Free trial / introductory offer (if any).</strong> If we offer a free trial or introductory price, it auto-converts to a paid subscription at the regular price unless cancelled at least 24 hours before the trial ends. <em>One trial per Apple ID / Google account.</em></p>
+
+<p><strong>Cancellation.</strong> You can cancel anytime in your store account (<em>iOS:</em> Settings → Apple ID → Subscriptions; <em>Android:</em> Play Store → Profile → Payments &amp; subscriptions → Subscriptions). Cancellation takes effect at the end of the current period; the Service does not provide pro-rata refunds.</p>
+
+<p><strong>Refunds.</strong> Refund requests are handled by Apple or Google according to their store policies. Where a mandatory consumer-protection law in your jurisdiction grants you a right of withdrawal (e.g., the EU's 14-day right under the Consumer Rights Directive — see <a href="#eu">EU/UK addendum</a>), you may exercise it as described in your store's documentation; we will honour any refund the store issues. <strong>By starting a subscription and using Premium features (e.g., sending a long-range message), you expressly request that we begin performance immediately, and you acknowledge that the EU 14-day withdrawal right is, to the extent allowed by law, no longer fully available once Premium has been used.</strong></p>
+
+<p><strong>Quota.</strong> Long-range message slots reset at the start of each billing period and do not roll over. Unused slots have no cash value and are not refundable.</p>
+
+<h2 id="gifts">9. Digital gifts &amp; consumables</h2>
+
+<p>The Service offers consumable in-app purchases ("gifts") that you can send inside a conversation. Each gift is a one-time consumable IAP product (e.g., flower, coffee, cocktail). Gifts have <strong>no real-world value</strong>, cannot be exchanged for cash or any other consideration, and cannot be transferred between users. Once sent, a gift is non-refundable except as required by mandatory consumer-protection law in your jurisdiction. Apple and Google manage all transaction-level concerns.</p>
+
+<h2 id="boost">10. Profile boost</h2>
+
+<p>A 60-minute boost (<code>com.musamecit.deerby.boost</code>, USD 19.99) lifts your profile to the top of the 105 m discovery list within a 200 m radius around the centre point at which you purchased the boost. A boost is not a guarantee of any specific outcome. A boost is a one-time consumable IAP and is not refundable except as required by mandatory consumer-protection law.</p>
+
+<h2 id="license">11. Licence we grant you</h2>
+<p>Subject to these Terms, we grant you a limited, personal, non-exclusive, non-sublicensable, non-transferable, revocable licence to install and use the Deerby app on devices you own or control, solely for your personal, non-commercial use. All rights not expressly granted are reserved.</p>
+
+<h2 id="content">12. Your content &amp; licence to us</h2>
+<p>You retain ownership of the photos, profile information, messages, icebreaker answers and any other content you create ("<strong>User Content</strong>"). By submitting User Content to the Service, you grant the Operator a worldwide, royalty-free, non-exclusive, sublicensable (only to our subprocessors as described in our Privacy Policy) licence to host, store, transmit, display, scan for safety, and adapt your User Content strictly to operate, maintain and improve the Service (e.g., showing your photos to nearby users; delivering your messages; running automated content moderation). We do not use your User Content for advertising, training third-party AI models, or any purpose unrelated to operating the Service.</p>
+<p>You represent that (i) you own or have all necessary rights to the User Content; (ii) it does not infringe anyone's intellectual-property, privacy or publicity rights; (iii) for profile photos, the photo depicts you and was not obtained by deception; and (iv) where another identifiable person appears in any User Content, that person consented to its use here.</p>
+<p>If you delete User Content or your account, we cease using it and remove it within 30 days, except for (a) anonymised aggregate data, (b) backup copies that rotate within 30 days, and (c) data we are legally required to retain (e.g., IAP receipts).</p>
+
+<h2 id="conduct">13. Prohibited conduct</h2>
+<p>You agree not to, and not to attempt to, do any of the following:</p>
+
+<h3>13.1 Account misuse</h3>
 <ul>
   <li>impersonate another person, create a fake or misleading profile, or use someone else's photos;</li>
-  <li>upload nudity, sexually explicit content, content sexualising minors, gore, or content that violates the law of your jurisdiction;</li>
-  <li>harass, threaten, intimidate, defame, or stalk any person;</li>
-  <li>send spam, unsolicited commercial messages, links to scams, malware, or phishing;</li>
-  <li>solicit money, gifts, or services through the Service;</li>
-  <li>spoof your location, run the app on emulators or jailbroken/rooted devices in order to defeat the radius rule;</li>
-  <li>reverse-engineer, decompile, scrape, or attempt to extract source code or data from the Service except as expressly permitted by law;</li>
-  <li>interfere with the operation of the Service, probe its security, or use it to harm others;</li>
-  <li>use the Service if you are a registered sex offender or are otherwise legally prohibited from interacting with adults online.</li>
+  <li>use the Service while you are under 18;</li>
+  <li>maintain more than one Deerby account at the same time;</li>
+  <li>create a new account after a ban without our permission.</li>
 </ul>
 
-<h2 id="safety">12. Safety, blocking, reporting</h2>
-<p>You can block any user from <em>their profile screen</em>, which prevents you from seeing
-each other and from messaging. You can report a user for spam, harassment, inappropriate
-photos, fake profile, suspected underage user, or "other". We review reports and may take
-action including warning, suspension, or permanent ban. Reporting in bad faith is itself
-a violation of these Terms.</p>
+<h3>13.2 Content violations</h3>
+<ul>
+  <li>upload nudity, sexually explicit content, content sexualising minors, gore, doxxing material, or content that violates the law of any jurisdiction in which the Service is accessed;</li>
+  <li>upload content that depicts real-world violence, hate symbols, or instructions for harming others;</li>
+  <li>post phone numbers, government IDs, financial information, or sexually explicit messages to a non-consenting recipient.</li>
+</ul>
 
-<h2 id="suspension">13. Suspension &amp; termination by us</h2>
-<p>We may suspend or terminate your account, with or without prior notice, if we reasonably
-believe you have violated these Terms, the law, the rights of another user, or the safety
-of the community. Where the violation is material (for example: doxxing, threats,
-content sexualising minors, repeated harassment), we may terminate immediately and
-without refund of any unused subscription time.</p>
+<h3>13.3 Behaviour towards others</h3>
+<ul>
+  <li>harass, threaten, intimidate, defame, dox or stalk any person;</li>
+  <li>send unsolicited commercial messages, links to scams, malware, or phishing;</li>
+  <li>solicit money, gifts or compensated companionship; promote escort, sex-work, mail-order-bride, get-rich-quick or pyramid schemes;</li>
+  <li>solicit sexual content from someone you have reason to believe is under 18;</li>
+  <li>attempt to identify another user from photos or details against their will (e.g., via reverse image search).</li>
+</ul>
 
-<h2 id="deletion">14. Account deletion by you</h2>
-<p>You can delete your account at any time from <em>Settings → Delete account</em>. Deletion
-is permanent and removes your profile, photos, blocks, filters, and chats from our active
-systems. Some data may persist for a short period in encrypted backups (max 30 days) and
-in financial records that we are legally required to retain. Active subscriptions are not
-automatically cancelled by deletion — you must cancel them in your store account.</p>
+<h3>13.4 Technical abuse</h3>
+<ul>
+  <li>spoof your location, run the app on emulators, jailbroken or rooted devices, or use any tool whose purpose is to defeat the radius rule, the ghost mode, or quiet hours;</li>
+  <li>reverse-engineer, decompile, scrape, or attempt to extract source code or data from the Service except as expressly permitted by mandatory law;</li>
+  <li>interfere with the operation of the Service, probe its security, evade rate limits, or use it to harm others;</li>
+  <li>access another account, take over a session, or use a bot or automated tool;</li>
+  <li>train any machine-learning model on User Content from the Service.</li>
+</ul>
 
-<h2 id="thirdparty">15. Third-party platforms</h2>
-<p>Deerby is distributed through the <strong>Apple App Store</strong> and <strong>Google Play</strong>
-and uses services provided by <strong>Supabase, Inc.</strong> (backend), Apple Sign-In,
-Google Sign-In, Apple Maps, Google Maps (Android), and Apple/Google push services. Your
-use of those platforms is also governed by their own terms; the Operator is not
-responsible for them.</p>
+<h3>13.5 Legal-status violations</h3>
+<ul>
+  <li>use the Service if you are a registered sex offender, on a national sanctions list (e.g., OFAC SDN), or otherwise legally prohibited from interacting with adults online;</li>
+  <li>use the Service for any purpose that is illegal under the laws of your jurisdiction or under U.S. federal law (including 18 U.S.C. § 2421A — promotion or facilitation of prostitution).</li>
+</ul>
 
-<h2 id="disclaimer">16. Disclaimers</h2>
-<p>To the fullest extent permitted by law, the Service is provided <strong>"as is"</strong> and
-<strong>"as available"</strong>, without warranties of any kind, express or implied, including
-the implied warranties of merchantability, fitness for a particular purpose, and
-non-infringement. We do not warrant that the Service will be uninterrupted, secure, or
-error-free, that defects will be corrected, or that any specific outcome (including
-forming a relationship or making a contact) will result from your use of the Service.</p>
-<p>You are solely responsible for evaluating any other user before meeting them in person.
-Always meet new people in public places and trust your instincts.</p>
+<h2 id="safety">14. Personal safety &amp; in-person meetings</h2>
 
-<h2 id="liability">17. Limitation of liability</h2>
-<p>To the fullest extent permitted by law, the Operator's aggregate liability arising out
-of or in connection with these Terms or the Service is limited to the greater of (a) the
-amount you paid us for Premium in the twelve (12) months preceding the event giving rise
-to the claim, and (b) USD 50. We are not liable for any indirect, incidental, special,
-consequential, exemplary, or punitive damages, or for loss of profits, data, goodwill, or
-opportunity, even if we have been advised of the possibility of such damages.</p>
-<p>Nothing in these Terms limits or excludes liability that cannot lawfully be limited or
-excluded, including liability for fraud, gross negligence, wilful misconduct, or death or
-personal injury caused by negligence.</p>
+<div class="danger">
+<span class="allcaps">No screening, no warranty.</span>
+<p style="margin: 6px 0 0 0;">Deerby <strong>does not</strong> conduct criminal-record checks, sex-offender registry checks, or any pre-screening of users beyond the 18+ self-attestation, optional photo / ID verification, automated content moderation and abuse reporting. <strong>You are solely responsible</strong> for evaluating any other user before, during and after any communication or in-person meeting. Always meet new people in public places, tell a friend where you are going, and trust your instincts. If you feel unsafe, leave immediately. Use the in-app Panic Button to send your live location to your trusted contacts. In an emergency, call your local emergency services first.</p>
+</div>
 
-<h2 id="indemnity">18. Indemnification</h2>
-<p>You agree to indemnify and hold harmless the Operator and its agents from and against
-any claim, demand, loss, liability, or expense (including reasonable attorneys' fees)
-arising out of (a) your User Content; (b) your breach of these Terms; (c) your violation
-of any law or third-party right; or (d) your interactions with other users.</p>
+<p>The Operator is not a chaperone, escort, security service, dating coach, therapist, broker or guardian. We do not vet users, verify their statements (other than as expressly described in our Privacy Policy), or supervise interactions among them. <strong>You assume all risks of meeting other users in person, online or otherwise, and you waive any claim against the Operator arising from such interactions to the maximum extent allowed by law.</strong></p>
 
-<h2 id="changes">19. Changes</h2>
-<p>We may modify the Service or these Terms. Material changes will be announced inside the
-app at least 7 days before they take effect. Continuing to use the Service after the
-effective date constitutes acceptance of the updated Terms. If you do not accept, your
-remedy is to stop using the Service and delete your account.</p>
+<h2 id="moderation">15. Moderation, reports, blocks</h2>
+<p>You can block any user from their profile screen, which prevents you from seeing each other and from messaging. You can report a user for spam, harassment, inappropriate photos, fake profile, suspected underage user, or "other". Reports are reviewed by us within a reasonable time. We may take action including warning, hiding, suspending or permanently banning the reported user. Reporting in bad faith is itself a violation of these Terms. We are not obliged to publish the outcome of a moderation decision.</p>
+<p>Photo moderation. All photos uploaded to the Service are scanned automatically (AWS Rekognition or equivalent). Photos that the system flags for explicit nudity, content involving minors, graphic violence, or other prohibited content will be hidden from discovery, and may be deleted along with the account that uploaded them. The system is not infallible.</p>
 
-<h2 id="governing">20. Governing law &amp; disputes</h2>
-<p>These Terms are governed by the laws of the Republic of <strong>Türkiye</strong>, without
-regard to its conflict-of-laws provisions. The exclusive courts and execution offices of
-<strong>Istanbul (Çağlayan)</strong> shall have jurisdiction, except that consumers may also
-bring proceedings in the courts of their place of habitual residence where mandatory
-local law allows.</p>
+<h2 id="suspension">16. Suspension &amp; termination by us</h2>
+<p>We may suspend or terminate your account, with or without prior notice, if we reasonably believe you have violated these Terms, the law, the rights of another user, or the safety of the community. Where the violation is material (for example: doxxing, threats, content sexualising minors, repeated harassment, location spoofing, age fraud), we may terminate immediately and <strong>without refund</strong> of any unused subscription time, gift balance or boost time. We may also share information about the violating account with law enforcement and with future moderation systems.</p>
 
-<h2 id="contact">21. Contact</h2>
-<p><a href="mailto:support@musamecit.com">support@musamecit.com</a></p>
+<h2 id="deletion">17. Account deletion by you</h2>
+<p>You can delete your account at any time from <em>Settings → Delete account</em>. Deletion is permanent and removes your profile, photos, blocks, filters, conversations and your auth identity from our active systems. Some data may persist for a short period in encrypted backups (max 30 days) and in financial / consent / safety records that we are legally required to retain — see Privacy Policy section 12. Active subscriptions are <strong>not</strong> automatically cancelled by deletion — you must cancel them in your store account.</p>
 
-<h2 id="eula">22. EULA / Apple Standard EULA notes</h2>
-<p>For App Store distribution, this agreement is concluded between you and the Operator,
-not Apple. Apple is not responsible for the Service or any claims relating to it. The
-licence under section 9 is, on iOS, limited to the usage rules set forth in the Apple
-Media Services Terms and Conditions and is granted on the terms of Apple's Licensed
-Application End User Licence Agreement, except as expressly modified by these Terms. Apple
-and its subsidiaries are third-party beneficiaries of these Terms and may enforce them
-against you upon your acceptance.</p>
+<h2 id="thirdparty">18. Third-party platforms</h2>
+<p>Deerby is distributed through the <strong>Apple App Store</strong> and <strong>Google Play</strong> and uses services provided by <strong>Supabase, Inc.</strong> (backend), <strong>Apple Inc.</strong> (Sign-In, IAP, Maps on iOS, APNs), <strong>Google LLC</strong> (Sign-In, Play Billing, Maps SDK on Android, FCM), <strong>Amazon Web Services</strong> (Rekognition image moderation and face comparison), <strong>Stripe, Inc.</strong> (optional ID verification), <strong>Anthropic PBC</strong> (opener suggestions) and <strong>Expo, Inc.</strong> (push relay and EAS build). Your use of those platforms is also governed by their own terms and the Operator is not responsible for them.</p>
+
+<h2 id="disclaimer">19. Disclaimers</h2>
+<p class="allcaps">Service "as is", "as available".</p>
+<p>To the fullest extent permitted by law, the Service is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, express or implied, including the implied warranties of merchantability, fitness for a particular purpose, accuracy, non-infringement, security, integrity and uninterrupted access. The Operator does not warrant that:</p>
+<ul>
+  <li>the Service will be uninterrupted, timely, secure or error-free;</li>
+  <li>the location data is accurate or current;</li>
+  <li>any specific outcome (including forming a relationship, making a friend, going on a date, having an enjoyable interaction, or being safe in any interaction) will result from your use;</li>
+  <li>any other user is who they claim to be, has correctly stated their age, gender or identity, or will behave lawfully;</li>
+  <li>defects will be corrected, or content will be free of viruses or other harmful components.</li>
+</ul>
+<p>Some jurisdictions do not allow the disclaimer of certain implied warranties; in those jurisdictions some of the above disclaimers may not apply, but the rest of these Terms will continue to apply to the maximum extent allowed.</p>
+
+<h2 id="liability">20. Limitation of liability</h2>
+<p class="allcaps">Maximum cap.</p>
+<p>To the fullest extent permitted by applicable law, the Operator's aggregate liability arising out of or in connection with these Terms or the Service, regardless of the form of action (contract, tort, strict liability, statutory or otherwise), is limited to the <strong>greater</strong> of:</p>
+<ol>
+  <li>the amount you paid the Operator for Premium and other in-app purchases in the twelve (12) months immediately preceding the event giving rise to the claim, and</li>
+  <li>USD 50 (fifty US dollars).</li>
+</ol>
+<p class="allcaps">Excluded damages.</p>
+<p>To the fullest extent permitted by law, the Operator will not be liable for any indirect, incidental, special, consequential, exemplary or punitive damages, or for loss of profits, revenue, data, goodwill, opportunity, reputation, or for emotional distress arising from interactions with other users, even if the Operator has been advised of the possibility of such damages.</p>
+<p class="allcaps">What this section does not exclude.</p>
+<p>Nothing in these Terms limits or excludes liability that cannot lawfully be limited or excluded — including liability for fraud or fraudulent misrepresentation; liability for personal injury or death caused by negligence (in jurisdictions where this cannot be excluded); the Operator's wilful misconduct or gross negligence; statutory consumer rights under EU/UK law (see <a href="#eu">section 28</a>); or any non-waivable right under Türkiye's Consumer Protection Law (Tüketicinin Korunması Hakkında Kanun).</p>
+
+<h2 id="indemnity">21. Indemnification</h2>
+<p>To the fullest extent permitted by law, you agree to defend, indemnify and hold harmless the Operator, its agents, contractors, licensors, and successors from and against any claim, demand, loss, liability, damage or expense (including reasonable attorneys' fees and court costs) arising out of or related to:</p>
+<ul>
+  <li>your User Content;</li>
+  <li>your breach of these Terms or the Privacy Policy;</li>
+  <li>your violation of any law, regulation or third-party right (including any intellectual-property right, privacy right or publicity right);</li>
+  <li>your interactions with other users, both inside the app and offline;</li>
+  <li>any false statement you made in your 18+ attestation or your profile.</li>
+</ul>
+<p>The Operator may, at its sole expense, assume the exclusive defence and control of any matter otherwise subject to indemnification by you, in which case you agree to cooperate with our defence of such claim.</p>
+
+<h2 id="changes">22. Changes to Service or Terms</h2>
+<p>We may modify the Service or these Terms. <strong>Material</strong> changes will be announced inside the app at least <strong>7 days</strong> before they take effect (or at least 30 days for material changes affecting paid Premium features, where required by your local law). Continuing to use the Service after the effective date constitutes acceptance of the updated Terms. If you do not accept, your remedy is to stop using the Service and delete your account.</p>
+
+<h2 id="governing">23. Governing law, venue, severability</h2>
+<p><strong>Governing law.</strong> These Terms are governed by the laws of the <strong>Republic of Türkiye</strong>, without regard to its conflict-of-laws provisions. The 1980 UN Convention on Contracts for the International Sale of Goods (CISG) does not apply.</p>
+<p><strong>Venue (general).</strong> Subject to the consumer-rights and arbitration provisions in the regional addenda below, the courts and execution offices of <strong>Istanbul (Çağlayan), Türkiye</strong> shall have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the Service. Consumers may also bring proceedings in the courts of their place of habitual residence where mandatory local law allows.</p>
+<p><strong>Severability.</strong> If any provision of these Terms is held to be invalid, illegal or unenforceable in any jurisdiction, the remaining provisions remain in full force in that jurisdiction, and the invalidity does not affect the validity of those provisions in any other jurisdiction.</p>
+<p><strong>Waiver / assignment.</strong> No failure to enforce a provision is a waiver of that provision. You may not assign these Terms without our consent; we may assign them in connection with a sale of all or substantially all of the Service's business.</p>
+
+<h2 id="contact">24. Notices &amp; contact</h2>
+<p>Notices to you may be given in-app or to the email associated with your account. Notices to us must be sent to <a href="mailto:legal@musamecit.com">legal@musamecit.com</a> (with a copy to <a href="mailto:support@musamecit.com">support@musamecit.com</a>).</p>
+
+<h2 id="eula">25. Apple Standard EULA notes</h2>
+<p>For App Store distribution, this agreement is concluded between you and the Operator, not Apple. <strong>Apple is not responsible</strong> for the Service or any claims relating to it, including product-liability claims, claims that the Service fails to conform to legal/regulatory requirements, and claims arising under consumer-protection or similar legislation. The licence granted in <a href="#license">section 11</a> is, on iOS, limited to the usage rules set forth in the Apple Media Services Terms and Conditions and is granted on the terms of Apple's Licensed Application End User Licence Agreement, except as expressly modified by these Terms. Apple and its subsidiaries are <strong>third-party beneficiaries</strong> of these Terms and may enforce them against you upon your acceptance.</p>
 
 </section>
 
@@ -271,69 +284,110 @@ against you upon your acceptance.</p>
 
 <section id="tr">
 
-<h2>Deerby — Kullanım Koşulları (Türkçe Özet)</h2>
-<p><em>Yürürlük: 2 Mayıs 2026 · Sürüm 1.0</em></p>
-<p>Aşağıdaki Türkçe özet bilgi amaçlıdır; bağlayıcı sürüm İngilizce metindir.</p>
+<h2>26. Türkçe Tam Metin — Kullanım Koşulları</h2>
+<p><em>Yürürlük: 2 Mayıs 2026 · Sürüm 1.4</em></p>
 
-<h3>Kabul ve yaş şartı</h3>
-<p>Deerby'yi kullanmak için <strong>en az 18 yaşında</strong> olmalısınız. Hesap açarak bu
-koşulları kabul etmiş sayılırsınız.</p>
+<p>Aşağıdaki Türkçe metin, Türkiye Cumhuriyeti tüketicisi olan kullanıcılar için bağlayıcıdır. İngilizce metinle olası yorum farklılıklarında, tüketici lehine olan yorum esas alınır.</p>
 
-<h3>Hesap</h3>
-<p>Apple veya Google ile giriş yaparsınız. Profil bilgilerinizi doğru tutmak ve giriş
-bilgilerinizi güvende saklamak sizin sorumluluğunuzdadır. Bir kişi aynı anda yalnızca bir
-Deerby hesabı kullanabilir.</p>
+<h3>26.1 Taraflar &amp; Tanım</h3>
+<p>İşbu Kullanım Koşulları ("<strong>Sözleşme</strong>"), bireysel olarak Mustafa Mecit ("<strong>İşletici</strong>", "biz") ile Deerby uygulamasını ve ilgili hizmetleri (topluca "<strong>Hizmet</strong>") kullanan kişi ("<strong>Kullanıcı</strong>", "siz") arasında akdedilmiştir. Kayıt olmak veya "18+ olduğumu beyan ediyor ve kabul ediyorum" düğmesine dokunmak Sözleşme'yi kabul ettiğiniz anlamına gelir.</p>
 
-<h3>Çalışma şekli ve 105 m kuralı</h3>
-<p>Yalnızca tam konumu açık olan ve 105 m yarıçap içindeki kullanıcılar birbirini görür ve
-mesajlaşabilir. Premium kullanıcılar haritanın tamamını görür ve dönem başına 10 uzak
-mesafe mesajı atabilir. İsimle arama özelliği bilinçli olarak yoktur.</p>
+<h3>26.2 Yaş ve hukuki ehliyet</h3>
+<p>Kullanıcı, en az 18 yaşında ve fiil ehliyetine sahip olduğunu, doğum tarihi alanına gerçek bilgisini girdiğini ve aksini ispatlayan herhangi bir mahkeme kararına tabi olmadığını beyan ve taahhüt eder. <strong>18 yaşından küçük olduğu öğrenilen veya makul biçimde anlaşılan</strong> hesaplar derhal ve geri ödeme olmaksızın silinir.</p>
 
-<h3>Hayalet Mod</h3>
-<p>Açtığınızda kimse sizi göremez ve siz de kimseyi göremezsiniz; bu sırada konumunuz
-sunucuya yazılmaz. Hayalet Mod, premium süresini durdurmaz.</p>
+<h3>26.3 Hizmetin niteliği</h3>
+<p>Deerby, kullanıcılarına 105 m yarıçap içerisindeki diğer kullanıcıları gösteren konum tabanlı bir sosyal uygulamadır. İsimle arama özelliği bilinçli olarak yoktur. Uygulama bir flört aracılık hizmeti, escort hizmeti, evlilik aracılık servisi veya benzeri bir hizmet değildir ve bu amaçla kullanılamaz.</p>
 
-<h3>24 saat kuralı</h3>
-<p>İlk mesaj 24 saat içinde cevaplanmazsa sohbet ve içindeki tüm mesajlar kalıcı olarak
-silinir. İki taraf da en az birer mesaj attığında sohbet kalıcı sayılır. Her yeni
-sohbette uyarı gösterilir.</p>
+<h3>26.4 Tam konum şart</h3>
+<p>Hizmet, tam konum izni açıkken çalışır. Konum izninizi geri çekerseniz Hizmet duraklar.</p>
 
-<h3>Premium aboneliği</h3>
-<p><strong>9,99 USD / hafta</strong>, otomatik yenilenen abonelik. Ödeme iOS'ta Apple,
-Android'de Google üzerinden alınır; kart bilgilerinizi biz görmeyiz. Aboneliği iptal
-etmek için cihazınızdaki mağaza hesabını kullanın. İade politikası ilgili mağazanın
-kurallarına tabidir. Uzak mesaj kotası dönem başında sıfırlanır, devretmez, nakit
-karşılığı yoktur.</p>
+<h3>26.5 Hayalet Mod, Güvenli Bölgeler, Sessiz Saatler</h3>
+<p>Hayalet Mod açıkken konumunuz sunucuya yazılmaz; siz de başkasını göremezsiniz. Güvenli Bölgeler ve Sessiz Saatler ayarlarınız ile Hayalet Mod otomatik açılabilir.</p>
 
-<h3>Yasak davranışlar</h3>
-<p>Sahte profil, başkasının fotoğraflarını kullanma, çıplaklık veya yetişkinlere uygun
-olmayan içerik, taciz, tehdit, spam, dolandırıcılık, konum sahteciliği, uygulamayı
-tersine mühendislik, başka kullanıcıların güvenliğini tehlikeye atma yasaktır. Bu
-maddelere aykırılık halinde hesabınız uyarısız askıya alınabilir veya kapatılabilir;
-ödenmiş süreler için iade yapılmaz.</p>
+<h3>26.6 24 saat kuralı</h3>
+<p>İlk mesaj 24 saat içinde cevaplanmazsa sohbet ve içindeki tüm mesajlar kalıcı olarak silinir. Silinen sohbetlerin geri getirilmesi mümkün değildir.</p>
 
-<h3>Engelleme ve şikayet</h3>
-<p>Her profili engelleyebilir veya spam, taciz, uygunsuz fotoğraf, sahte profil, küçük
-yaşlı kullanıcı şüphesi gibi nedenlerle şikayet edebilirsiniz. Şikayetler ekibimizce
-incelenir.</p>
+<h3>26.7 Premium &amp; ücretler — Tüketici hakları</h3>
+<p>Haftalık ($9,99) veya yıllık ($189) otomatik yenilenen Premium aboneliği. Ödemeler iOS'ta Apple, Android'de Google Play Billing üzerinden alınır. <strong>Kart bilgileriniz İşletici'ye ulaşmaz.</strong></p>
+<p><span class="allcaps">Cayma hakkı.</span> 6502 sayılı Tüketicinin Korunması Hakkında Kanun'un Mesafeli Sözleşmeler Yönetmeliği uyarınca dijital içerik aboneliklerinde 14 günlük cayma hakkınız olabilir; ancak hizmet ifasına başlanmasını <strong>açık rızanızla</strong> onaylamanız ve ifaya başlanmış olması halinde bu hak yönetmelikte sayılan istisnalar çerçevesinde sınırlanabilir. Hizmeti kullanmaya (örn. uzak mesafe mesajı göndermek) başlamanız, ifaya başlanmasını talep ettiğinizin açık beyanı olarak kabul edilir.</p>
+<p><span class="allcaps">İptal.</span> Aboneliği cihazınızdaki mağaza hesabından (iOS: Ayarlar → Apple Kimliği → Abonelikler; Android: Play Store → Profil → Ödemeler ve abonelikler) iptal edebilirsiniz. İade talepleri Apple/Google politikalarına tabidir; mağazanın iade ettiği tutarı tarafımız da kabul eder.</p>
 
-<h3>Hesap silme</h3>
-<p><em>Ayarlar → Hesabı sil</em> ile hesabınız, fotoğraflarınız, sohbetleriniz ve filtreleriniz
-kalıcı olarak silinir. Aktif aboneliğinizi mağaza hesabınızdan ayrıca iptal etmeniz
-gerekir; silme aboneliği otomatik kapatmaz.</p>
+<h3>26.8 Hediyeler ve Boost</h3>
+<p>Hediyeler ($0,99–$4,99) ve 60 dakikalık Boost ($19,99) tek seferlik tüketilebilir IAP ürünleridir. Gerçek dünya değeri yoktur, başka kullanıcıya devredilemez ve emredici tüketici mevzuatı çerçevesi dışında iadesi yapılmaz.</p>
 
-<h3>Uygulanacak hukuk</h3>
-<p>Bu sözleşmeye <strong>Türkiye Cumhuriyeti hukuku</strong> uygulanır. Uyuşmazlıklarda
-<strong>İstanbul (Çağlayan) Mahkemeleri ve İcra Daireleri</strong> yetkilidir; tüketiciler emredici
-hukukun izin verdiği yerlerde kendi mutad meskenlerinin mahkemelerine de başvurabilir.</p>
+<h3>26.9 Yasak davranışlar</h3>
+<p>Yukarıdaki İngilizce 13. bölümdeki tüm hükümler aynen geçerlidir: sahte profil, çıplaklık veya yetişkinlere uygun olmayan içerik, taciz, dolandırıcılık, konum sahteciliği, escort/aracılık talepleri, tersine mühendislik, vb.</p>
 
-<h3>İletişim</h3>
-<p><a href="mailto:support@musamecit.com">support@musamecit.com</a></p>
+<h3>26.10 Sorumluluk reddi ve hakkın aşırı sınırlanmaması</h3>
+<p>Hizmet "olduğu gibi" ve "müsait olduğu kadarıyla" sunulur. Ancak, 6502 sayılı Tüketicinin Korunması Hakkında Kanun'un emredici hükümleri, Türk Borçlar Kanunu'nun ağır kusur ve kasta dair hükümleri ve diğer emredici mevzuat hükümleri saklıdır. İşletici'nin <strong>kasıt veya ağır ihmal</strong> hâlinde sorumluluğu sınırlanamaz.</p>
+<p>İngilizce 20. bölümdeki üst sınır (12 ay içinde ödediğiniz tutar veya 50 USD, hangisi büyükse) Türkiye'de tüketici sıfatıyla bulunan kullanıcılar için ancak emredici tüketici hakları ölçüsünde geçerli sayılır.</p>
+
+<h3>26.11 Kişisel buluşma uyarısı</h3>
+<p>Diğer kullanıcılarla şahsi buluşmalar tamamen sizin sorumluluğunuzdadır. <strong>İşletici, kullanıcı geçmişini, ehliyetini, beyanlarını veya niyetini araştırmaz.</strong> Buluşmalardan veya bunlara hazırlık aşamasından doğan tüm zarar ve sorumluluk Kullanıcı'ya aittir; ancak ağır ihmal/kasta dair emredici sorumluluğumuz saklıdır.</p>
+
+<h3>26.12 Uygulanacak hukuk &amp; yetki</h3>
+<p>Türk hukuku uygulanır. Tüketici sıfatıyla bulunan kullanıcılar bakımından tüketici hakem heyetlerinin parasal yetki sınırı içinde tüketici hakem heyeti, üzerinde tüketici mahkemeleri (mukim olunan yer veya İstanbul/Çağlayan); diğer kullanıcılar bakımından İstanbul/Çağlayan Mahkemeleri ve İcra Daireleri yetkilidir.</p>
+
+<h3>26.13 Bildirimler</h3>
+<p>Tarafımıza bildirimler <a href="mailto:legal@musamecit.com">legal@musamecit.com</a> adresine yapılır. KVKK kapsamındaki başvurular için <a href="privacy.html#tr">Gizlilik Politikası m.22</a>'ye bakınız.</p>
 
 </section>
 
 <hr/>
-<p class="muted">© 2026 Mustafa Mecit. Deerby is a trademark of the Operator.</p>
+
+<section id="us">
+
+<h2>27. United States Addendum — Arbitration &amp; Class-Action Waiver</h2>
+
+<div class="danger">
+<p style="margin: 0;"><span class="allcaps">Important — read carefully.</span> If you reside in the United States, this section requires you to resolve most disputes with the Operator through binding individual arbitration, not in court, and to waive participation in class actions, except for the limited carve-outs described below. You may opt out of this section within <strong>30 days</strong> of first accepting these Terms by emailing <a href="mailto:legal@musamecit.com">legal@musamecit.com</a> with subject line "Arbitration Opt-Out" and your full account email. Opting out of arbitration does not affect any other part of these Terms.</p>
+</div>
+
+<h3>27.1 Informal dispute resolution first</h3>
+<p>Before initiating arbitration, you and the Operator agree to first try to resolve any dispute informally for at least <strong>60 days</strong>. To begin, send a written description of your dispute, your name and account email, and the relief you seek to <a href="mailto:legal@musamecit.com">legal@musamecit.com</a>. We will respond and propose a resolution. If the dispute remains unresolved after 60 days from receipt of the notice, either party may proceed to arbitration.</p>
+
+<h3>27.2 Arbitration agreement</h3>
+<p>Any dispute, claim, or controversy arising out of or relating to these Terms, the Service, the Privacy Policy, or any in-app purchase ("<strong>Dispute</strong>") shall be resolved exclusively by <strong>binding individual arbitration</strong> administered by <strong>JAMS</strong> under its Streamlined Arbitration Rules &amp; Procedures, modified by these Terms. The arbitration shall be conducted in English. The seat / legal place of arbitration shall be <strong>San Francisco, California</strong> for U.S. residents, but the proceeding may be held remotely. The arbitrator's decision is final and binding. Judgement on the award may be entered in any court of competent jurisdiction. The Federal Arbitration Act (9 U.S.C. § 1 <em>et seq.</em>) governs the interpretation and enforcement of this section.</p>
+
+<h3>27.3 Class-action waiver</h3>
+<p class="allcaps">No class arbitration. No class actions. No representative actions.</p>
+<p>You and the Operator each agree that any Dispute will be brought <strong>only in your individual capacity</strong>, and not as a plaintiff or class member in any purported class, collective, mass, consolidated or representative proceeding. The arbitrator may not consolidate more than one person's claims and may not preside over any form of representative or class proceeding. If a court decides this class waiver is unenforceable, then the entire arbitration agreement in this section will be null and void as to that Dispute, but only that Dispute, and the Dispute will proceed in court — and not as a class action.</p>
+
+<h3>27.4 Carve-outs</h3>
+<p>Notwithstanding the above, either party may bring an individual action in <strong>small-claims court</strong> if the claim qualifies. Either party may also seek <strong>injunctive or equitable relief</strong> in any court of competent jurisdiction to prevent infringement of intellectual-property rights or unauthorised access to the Service.</p>
+
+<h3>27.5 Fees, governing law</h3>
+<p>The party initiating arbitration pays the JAMS filing fee, subject to the JAMS Consumer Minimum Standards. If the arbitrator finds the claim was filed in good faith, the Operator will reimburse the consumer's filing fee. Each party bears its own costs and attorneys' fees, unless the arbitrator awards otherwise based on a controlling statute (e.g., a fee-shifting consumer-protection law). Apart from arbitration, the laws of the State of California apply for U.S. residents in respect of these Terms.</p>
+
+<h3>27.6 Severability of this section</h3>
+<p>If any part of this U.S. addendum is held invalid, the rest of these Terms remain in effect.</p>
+
+</section>
+
+<hr/>
+
+<section id="eu">
+<h2>28. EU / UK consumer-rights addendum</h2>
+
+<h3>28.1 Statutory rights preserved</h3>
+<p>If you are a "consumer" within the meaning of Article 2 of Directive 2011/83/EU (Consumer Rights Directive), Article 2 of Directive (EU) 2019/770 (Digital Content) or Article 2 of Directive (EU) 2019/771 (Sale of Goods) — or the corresponding UK Consumer Rights Act 2015 provisions — nothing in these Terms restricts the statutory rights you have under those laws. Where any clause of these Terms conflicts with such a mandatory right, the mandatory right prevails for that clause only.</p>
+
+<h3>28.2 14-day right of withdrawal</h3>
+<p>You have a 14-day right of withdrawal for distance contracts for digital content under Article 16(m) of Directive 2011/83/EU. By starting to use Premium features (e.g., sending a long-range message, applying a Boost, or sending a paid gift), you (a) <strong>expressly request</strong> that performance begin during the 14-day period, and (b) <strong>acknowledge</strong> that you will <strong>lose</strong> your right of withdrawal once the digital content has been supplied and performance has started. To withdraw before that point, contact <a href="mailto:legal@musamecit.com">legal@musamecit.com</a> within 14 days of subscribing.</p>
+
+<h3>28.3 Online dispute resolution</h3>
+<p>The European Commission provides an online dispute resolution platform: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. We are not obliged to and do not commit to participate in any out-of-court dispute resolution procedure before a consumer arbitration board.</p>
+
+<h3>28.4 UK-specific note</h3>
+<p>If you are a UK consumer, your rights under the Consumer Rights Act 2015, the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013, and the UK GDPR are unaffected by these Terms. The mandatory-jurisdiction rules of the UK consumer-rights regime override the venue clause in section 23 if and to the extent they apply.</p>
+
+<h3>28.5 Court jurisdiction for EEA consumers</h3>
+<p>EEA consumers may bring proceedings in the courts of their place of habitual residence, irrespective of section 23, where the EU Brussels I-bis Regulation (Regulation 1215/2012) so allows.</p>
+
+</section>
+
+<hr/>
+<p class="muted">© 2026 Mustafa Mecit. Deerby is a trademark of the Operator. This document is licensed for re-reading by you, not for redistribution as your own.</p>
 
 </body>
 </html>
